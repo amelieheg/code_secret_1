@@ -4,13 +4,13 @@ Jeu solo de déduction destiné aux personnes qui veulent résoudre un code de q
 
 - Dépôt : [amelieheg/code_secret_1](https://github.com/amelieheg/code_secret_1).
 - Application : [jouer à Code secret](https://amelieheg.github.io/code_secret_1/).
-- Version de remise : tag `jalon-1` du nouveau dépôt, à finaliser après vérification de la publication. Le tag copié du précédent dépôt est conservé pendant la préparation.
+- Version de remise : [tag jalon-1](https://github.com/amelieheg/code_secret_1/tree/jalon-1), qui repère la version préparée pour ce dépôt distinct.
 
 ## État actuel
 
 - Disponible : partie complète, choix et modification des quatre couleurs, dix essais, historique, indices avec doublons, victoire, défaite et nouvelle partie.
 - Vérifié : 22 tests du moteur ; essais de l’interface et correction mobile détaillés dans les preuves. Le code du jeu reste identique dans ce nouveau dépôt.
-- À finaliser pour cette copie : confirmation du nouveau site publié et du tag de remise.
+- Publication : jeu accessible dans le dépôt distinct code_secret_1 ; fichiers publiés comparés aux sources locales, sans différence de contenu.
 - Limites principales : pas de sauvegarde au rechargement ; smartphone réel et parcours clavier complet non vérifiés.
 
 ## Règles et source
@@ -70,7 +70,7 @@ Résultat de l’exécution locale : **22 tests réussis, aucun échec**, avec N
 
 Dans Edge 157, les essais automatisés de l’interface confirment le refus d’une proposition de trois couleurs sans essai consommé, une victoire avec quatre couleurs exactes et le redémarrage. La légende est visible à 390 px et à 1280 px. Voir les [résultats du navigateur et les captures](docs/preuves/tests-navigateur.md). Le petit écran est simulé, pas un smartphone réel.
 
-La publication de ce nouveau dépôt est en cours de vérification. Les résultats et les liens propres à `code_secret_1` seront consignés dans la [preuve de publication](docs/preuves/publication.md).
+Publication du nouveau dépôt vérifiée le 12 novembre 2026 : [tests GitHub réussis](https://github.com/amelieheg/code_secret_1/actions/runs/43192639902) et [déploiement Pages réussi](https://github.com/amelieheg/code_secret_1/actions/runs/43192637128). Les quatre fichiers du jeu répondent en HTTP 200 et sont identiques aux sources locales après normalisation des retours de ligne : [preuve de publication](docs/preuves/publication.md).
 
 ## Correction expliquée
 
@@ -78,7 +78,7 @@ La publication de ce nouveau dépôt est en cours de vérification. Les résulta
 
 ## Limites et questions ouvertes
 
-- Publication de cette copie dans le dépôt distinct `code_secret_1` : vérification en cours.
+- Le site publié correspond au même code que les essais de l’interface conservés dans les preuves. Le nouveau contrôle de publication vérifie les fichiers et leur disponibilité ; il ne constitue pas un nouvel essai complet du parcours dans le navigateur.
 - Les tests automatisés du moteur ne prouvent pas l’ergonomie, le parcours clavier complet ni le comportement tactile sur smartphone réel. Ces contrôles restent à faire.
 - Le code secret est caché dans l’interface pendant la partie ; ce jeu exécuté dans le navigateur ne cherche pas à empêcher l’inspection par les outils de développement.
 - L’historique est perdu au rechargement. Pas de sauvegarde ni de PWA.
@@ -97,6 +97,6 @@ Projet maintenu par Amélie Sordet dans le cadre du cours. Pour signaler un prob
 - `app.js` : interactions et affichage.
 - `game.test.js` : tests des règles.
 - `AGENTS.md` : consignes durables pour travailler avec Codex.
-- `.github/workflows/` : tests et publication Pages ; résultats du nouveau dépôt dans la preuve de publication.
+- `.github/workflows/` : tests et publication Pages vérifiés sur le nouveau dépôt.
 
 Documentation préparée à partir du [support S4 du 11 novembre](https://docs.google.com/presentation/d/1Yi_XaAN5B_8kT8FrJXQ6rpPXLBk-8riz5rpyb55_Weo/edit), du [guide README](https://docs.google.com/document/d/10FoB8lHkMB_Ys30Zcll1dFR_1TZ5nlNyhXRihrIIFjw/edit) et du [guide AGENTS](https://docs.google.com/document/d/1_epbOr-PrHMvFYcZaeLMDIjAmcKWd40ORtTX8Ia6_Sw/edit).
