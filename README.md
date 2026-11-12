@@ -1,10 +1,17 @@
 # Code secret
 
-Jeu solo de déduction inspiré du Mastermind, réalisé avec Codex pour le cours. Cette première version prépare uniquement le **jalon 1 du 20 novembre 2026 au soir**.
+Jeu solo de déduction destiné aux personnes qui veulent résoudre un code de quatre couleurs en dix essais. Inspiré du Mastermind, il est réalisé avec Codex pour le cours. Cette première version prépare uniquement le **jalon 1 du 20 novembre 2026 au soir**.
 
 - Dépôt : [amelieheg/code_secret_1](https://github.com/amelieheg/code_secret_1).
 - Application : [jouer à Code secret](https://amelieheg.github.io/code_secret_1/).
 - Version de remise : tag `jalon-1` du nouveau dépôt, à finaliser après vérification de la publication. Le tag copié du précédent dépôt est conservé pendant la préparation.
+
+## État actuel
+
+- Disponible : partie complète, choix et modification des quatre couleurs, dix essais, historique, indices avec doublons, victoire, défaite et nouvelle partie.
+- Vérifié : 22 tests du moteur ; essais de l’interface et correction mobile détaillés dans les preuves. Le code du jeu reste identique dans ce nouveau dépôt.
+- À finaliser pour cette copie : confirmation du nouveau site publié et du tag de remise.
+- Limites principales : pas de sauvegarde au rechargement ; smartphone réel et parcours clavier complet non vérifiés.
 
 ## Règles et source
 
@@ -14,7 +21,7 @@ Les [sept règles complètes](docs/sources/regles.md) et le [périmètre du jalo
 
 ## Commencer
 
-Ouvrez [le jeu publié](https://amelieheg.github.io/code_secret_1/) dans un navigateur récent. Pour jouer localement, ouvrez `index.html`. Aucune installation ni aucun serveur ne sont nécessaires. Les polices en ligne sont facultatives : des polices locales prennent le relais sans connexion.
+Ouvrez [le jeu publié](https://amelieheg.github.io/code_secret_1/) dans un navigateur récent. Pour jouer localement, ouvrez `index.html`. Aucune installation ni aucun serveur ne sont nécessaires. La page doit afficher le plateau de dix essais, quatre emplacements vides et les six couleurs de la palette. Les polices en ligne sont facultatives : des polices locales prennent le relais sans connexion.
 
 ## Jouer
 
@@ -77,6 +84,10 @@ La publication de ce nouveau dépôt est en cours de vérification. Les résulta
 - L’historique est perdu au rechargement. Pas de sauvegarde ni de PWA.
 - Questions ouvertes : la présentation des couleurs est-elle assez lisible sans distinguer leurs teintes ? Le parcours clavier permet-il de jouer confortablement ?
 - API commune 0.2, essai du jeu d’un camarade et vidéo : réservés au jalon 2, hors du travail actuel.
+
+## Aide et reprise
+
+Projet maintenu par Amélie Sordet dans le cadre du cours. Pour signaler un problème, ouvrir une [issue du dépôt](https://github.com/amelieheg/code_secret_1/issues) en précisant les actions effectuées, le résultat attendu, le résultat observé et le navigateur utilisé. Les commandes de vérification et leurs résultats figurent ci-dessus ; les consignes de travail avec Codex sont dans [AGENTS.md](AGENTS.md).
 
 ## Fichiers
 
