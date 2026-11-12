@@ -6,6 +6,20 @@ Jeu solo de déduction destiné aux personnes qui veulent résoudre un code de q
 - Application : [jouer à Code secret](https://amelieheg.github.io/code_secret_1/).
 - Version de remise : [tag jalon-1](https://github.com/amelieheg/code_secret_1/tree/jalon-1), qui repère la version préparée pour ce dépôt distinct.
 
+## Comprendre les modifications quand on débute
+
+Le [guide pour comprendre le projet et le rendu](docs/COMPRENDRE-JALON-1.md) explique le rôle de chaque fichier, les changements, les commits et les trois liens à transmettre. Il contient aussi un tableau qui associe chaque exigence du 20 novembre à sa preuve.
+
+Les changements principaux sont :
+
+- Création du jeu : choix des couleurs, dix essais, historique, indices et fin de partie.
+- Séparation des règles et de l’écran : les calculs sont dans game.js ; les clics et l’affichage dans app.js.
+- Correction mobile : la légende des indices reste visible sur petit écran.
+- Ajout des tests : ils vérifient notamment les répétitions et la victoire au dixième essai.
+- Documentation et publication : README pour les lecteurs, AGENTS.md pour Codex, dépôt GitHub et site jouable séparés de l’ancien test.
+
+Ce résumé et le guide ont été ajoutés après la version étiquetée jalon-1. Ils complètent les explications sans modifier le jeu ni déplacer le tag. Les éléments requis pour le rendu sont déjà présents dans cette version étiquetée.
+
 ## État actuel
 
 - Disponible : partie complète, choix et modification des quatre couleurs, dix essais, historique, indices avec doublons, victoire, défaite et nouvelle partie.
