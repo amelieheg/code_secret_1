@@ -2,9 +2,9 @@
 
 Jeu solo de déduction inspiré du Mastermind, réalisé avec Codex pour le cours. Cette première version prépare uniquement le **jalon 1 du 20 novembre 2026 au soir**.
 
-- Dépôt : [amelieheg/code_secret](https://github.com/amelieheg/code_secret).
-- Application : [jouer à Code secret](https://amelieheg.github.io/code_secret/).
-- Version de remise : [tag `jalon-1`](https://github.com/amelieheg/code_secret/tree/jalon-1), commit `f4f545c`. La confirmation de publication ci-dessous a été ajoutée ensuite, sans modifier le jeu ni déplacer le tag.
+- Dépôt : [amelieheg/code_secret_1](https://github.com/amelieheg/code_secret_1).
+- Application : [jouer à Code secret](https://amelieheg.github.io/code_secret_1/).
+- Version de remise : tag `jalon-1` du nouveau dépôt, à finaliser après vérification de la publication. Le tag copié du précédent dépôt est conservé pendant la préparation.
 
 ## Règles et source
 
@@ -14,7 +14,7 @@ Les [sept règles complètes](docs/sources/regles.md) et le [périmètre du jalo
 
 ## Commencer
 
-Ouvrez [le jeu publié](https://amelieheg.github.io/code_secret/) dans un navigateur récent. Pour jouer localement, ouvrez `index.html`. Aucune installation ni aucun serveur ne sont nécessaires. Les polices en ligne sont facultatives : des polices locales prennent le relais sans connexion.
+Ouvrez [le jeu publié](https://amelieheg.github.io/code_secret_1/) dans un navigateur récent. Pour jouer localement, ouvrez `index.html`. Aucune installation ni aucun serveur ne sont nécessaires. Les polices en ligne sont facultatives : des polices locales prennent le relais sans connexion.
 
 ## Jouer
 
@@ -63,7 +63,7 @@ Résultat de l’exécution locale : **22 tests réussis, aucun échec**, avec N
 
 Dans Edge 157, les essais automatisés de l’interface confirment le refus d’une proposition de trois couleurs sans essai consommé, une victoire avec quatre couleurs exactes et le redémarrage. La légende est visible à 390 px et à 1280 px. Voir les [résultats du navigateur et les captures](docs/preuves/tests-navigateur.md). Le petit écran est simulé, pas un smartphone réel.
 
-Publication vérifiée le 12 novembre 2026 : [tests GitHub réussis](https://github.com/amelieheg/code_secret/actions/runs/43189471200) et [déploiement Pages réussi après activation](https://github.com/amelieheg/code_secret/actions/runs/43189471458). Les quatre fichiers publiés sont identiques à ceux vérifiés localement. Les essais de proposition incomplète, victoire et redémarrage réussissent également sur le site publié : [preuve de publication](docs/preuves/publication.md).
+La publication de ce nouveau dépôt est en cours de vérification. Les résultats et les liens propres à `code_secret_1` seront consignés dans la [preuve de publication](docs/preuves/publication.md).
 
 ## Correction expliquée
 
@@ -71,7 +71,7 @@ Publication vérifiée le 12 novembre 2026 : [tests GitHub réussis](https://git
 
 ## Limites et questions ouvertes
 
-- Le premier déploiement a échoué car Pages n’était pas activé. Après activation de GitHub Pages avec GitHub Actions, la deuxième tentative a réussi. Les prochaines modifications de `main` redéploient automatiquement le jeu.
+- Publication de cette copie dans le dépôt distinct `code_secret_1` : vérification en cours.
 - Les tests automatisés du moteur ne prouvent pas l’ergonomie, le parcours clavier complet ni le comportement tactile sur smartphone réel. Ces contrôles restent à faire.
 - Le code secret est caché dans l’interface pendant la partie ; ce jeu exécuté dans le navigateur ne cherche pas à empêcher l’inspection par les outils de développement.
 - L’historique est perdu au rechargement. Pas de sauvegarde ni de PWA.
@@ -86,6 +86,6 @@ Publication vérifiée le 12 novembre 2026 : [tests GitHub réussis](https://git
 - `app.js` : interactions et affichage.
 - `game.test.js` : tests des règles.
 - `AGENTS.md` : consignes durables pour travailler avec Codex.
-- `.github/workflows/` : tests et publication Pages vérifiés sur GitHub.
+- `.github/workflows/` : tests et publication Pages ; résultats du nouveau dépôt dans la preuve de publication.
 
 Documentation préparée à partir du [support S4 du 11 novembre](https://docs.google.com/presentation/d/1Yi_XaAN5B_8kT8FrJXQ6rpPXLBk-8riz5rpyb55_Weo/edit), du [guide README](https://docs.google.com/document/d/10FoB8lHkMB_Ys30Zcll1dFR_1TZ5nlNyhXRihrIIFjw/edit) et du [guide AGENTS](https://docs.google.com/document/d/1_epbOr-PrHMvFYcZaeLMDIjAmcKWd40ORtTX8Ia6_Sw/edit).
