@@ -23,9 +23,15 @@ Ce résumé et le guide ont été ajoutés après la version étiquetée jalon-1
 ## État actuel
 
 - Disponible : partie complète, choix et modification des quatre couleurs, dix essais, historique, indices avec doublons, victoire, défaite et nouvelle partie.
-- Vérifié : 22 tests du moteur ; essais de l’interface et correction mobile détaillés dans les preuves. Le code du jeu reste identique dans ce nouveau dépôt.
+- Vérifié : 22 tests historiques du moteur et 3 scénarios supplémentaires exécutés le 18 novembre ; essais de l’interface et correction mobile détaillés dans les preuves. Le code du jeu reste identique dans ce nouveau dépôt.
 - Publication : jeu accessible dans le dépôt distinct code_secret_1 ; fichiers publiés comparés aux sources locales, sans différence de contenu.
 - Limites principales : pas de sauvegarde au rechargement ; smartphone réel et parcours clavier complet non vérifiés.
+
+## Remise officielle sur Cyberlearn
+
+Le support du 18 novembre et ses notes précisent de déposer **jalon1_sordet.docx** sur Cyberlearn avant le 20 novembre au soir. Le document contient le lien du dépôt, celui du jeu et le tag jalon-1. Il est préparé dans le dossier local livraison, gardé hors du dépôt Git, et fourni dans le chat. Vérifier l’activité et l’heure limite sur [Cyberlearn](https://cyberlearn.hes-so.ch/course/view.php?id=28968). Aucun ZIP ni vidéo ne sont demandés pour J1.
+
+Les [changements du 18 novembre expliqués simplement](docs/CHANGEMENTS-18-NOVEMBRE.md) distinguent les nouveaux tests, les compléments de documentation et les contrôles non réalisés.
 
 ## Règles et source
 
@@ -85,6 +91,24 @@ Résultat de l’exécution locale : **22 tests réussis, aucun échec**, avec N
 Dans Edge 157, les essais automatisés de l’interface confirment le refus d’une proposition de trois couleurs sans essai consommé, une victoire avec quatre couleurs exactes et le redémarrage. La légende est visible à 390 px et à 1280 px. Voir les [résultats du navigateur et les captures](docs/preuves/tests-navigateur.md). Le petit écran est simulé, pas un smartphone réel.
 
 Publication du nouveau dépôt vérifiée le 12 novembre 2026 : [tests GitHub réussis](https://github.com/amelieheg/code_secret_1/actions/runs/43192639902) et [déploiement Pages réussi](https://github.com/amelieheg/code_secret_1/actions/runs/43192637128). Les quatre fichiers du jeu répondent en HTTP 200 et sont identiques aux sources locales après normalisation des retours de ligne : [preuve de publication](docs/preuves/publication.md).
+
+## Vérifications préparées pour l’atelier du 18 novembre
+
+Le [support S5 et ses notes](https://docs.google.com/presentation/d/1sO-jTstfaDlU-4PSp3cSrMlqkXfi76oaD-TIbbVDz78/edit) demandent d’écrire l’état de départ, l’action et l’attendu avant l’essai, puis de relever l’obtenu et la version. Les trois attendus ci-dessous sont consignés avant leur première exécution du 18 novembre.
+
+Chaque cas part d’une nouvelle partie avec zéro essai et un historique vide. Le secret connu est imposé uniquement dans le programme de test, grâce à la fonction de tirage contrôlable du moteur existant. Aucun mode de triche n’est ajouté au jeu publié.
+
+| Type | Secret de départ | Action | Attendu avant essai | Obtenu |
+| --- | --- | --- | --- | --- |
+| Normal | rouge, bleu, vert, jaune | proposer rouge, bleu, orange, violet | 2 bien placées, 0 mal placée ; 1 essai et 1 entrée d’historique | Conforme : 2 / 0, 1 essai, 1 entrée |
+| Limite du cours | rouge, rouge, bleu, vert | proposer quatre rouges | 2 bien placées, 0 mal placée ; 1 essai et 1 entrée d’historique | Conforme : 2 / 0, 1 essai, 1 entrée |
+| Négatif | rouge, rouge, bleu, vert | proposer rouge, bleu, vert | refus expliqué ; zéro essai, état et historique inchangés | Conforme : refus expliqué, zéro essai, état inchangé |
+
+Commande exécutée : `node tests/atelier5.test.cjs --rapport`. Résultat du 18 novembre : **3 scénarios réussis sur 3**, avec Node.js 24.22.3 sous Windows. Voir la [sortie détaillée avec attendu et obtenu](docs/preuves/atelier5-18-novembre.md). Le commit du dossier au lancement était 9a44362 ; la comparaison réelle confirme que le moteur est identique à celui du tag jalon-1, commit 29c1ad3.
+
+Le site publié a aussi été ouvert et utilisé le 18 novembre : proposition incomplète refusée sans essai, proposition complète enregistrée et redémarrage vérifié. Voir le [résultat des clics dans le navigateur](docs/preuves/site-18-novembre.md). Ce contrôle ne connaît pas le secret tiré par le site.
+
+Test croisé avec un binôme : **non réalisé**, confirmé le 18 novembre. Il ne faut pas le confondre avec les essais automatiques. Les [critères d’évaluation](https://docs.google.com/document/d/12frV3vQ_56p4iZkzQG4BskaaSHbMgCwzQUwbAcS2S5A/edit) prévoient le retour après essai du jeu d’un camarade pour J2.
 
 ## Correction expliquée
 

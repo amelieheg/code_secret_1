@@ -19,10 +19,11 @@ Oui : les éléments demandés dans la [consigne du jalon 1](sources/consigne-j1
 | Preuves avant/après | Dossier preuves : CSS sauvegardé, extrait de correction et captures | Présentes ; l’image avant est une reconstitution annoncée |
 | Premiers tests | Rapport preuves/tests-regles.md et rapport du navigateur | 22 tests du moteur réussis ; essais d’interface documentés |
 | Court bilan des limites | README : « Limites et questions ouvertes » | Présent |
+| Fichier Word sur Cyberlearn | Fichier local livraison/jalon1_sordet.docx, fourni dans le chat | Préparé ; dépôt à effectuer par l’étudiante |
 | Aucun extrait de conversation demandé | README : décision reformulée | Aucun historique de chat à transmettre |
 | Aucune vidéo à ce stade | Périmètre du rendu | Aucune vidéo nécessaire |
 
-Cette vérification porte sur la consigne de J1 fournie. La plateforme de dépôt du cours et une éventuelle heure limite précise ne sont pas indiquées dans cet extrait.
+Mise à jour du 18 novembre : le support S5 et les critères d’évaluation précisent le dépôt sur Cyberlearn du fichier jalon1_sordet.docx. Ce document a été préparé avec les deux liens et le tag. L’heure limite précise et l’activité sont à vérifier sur Cyberlearn.
 
 ## 2. À quoi sert chaque fichier ?
 
@@ -79,7 +80,7 @@ Exemple avec des répétitions :
 
 Le premier rouge est déjà bien placé. Il reste un rouge et un bleu à retrouver dans les autres positions. Le rouge supplémentaire de la proposition ne rapporte aucun indice, car il n’y a plus d’occurrence rouge disponible dans le secret.
 
-Les 22 tests réussissent. Un de ces tests compare les indices de toutes les 1 679 616 paires de codes possibles à un autre calcul de référence. Ce nombre ne signifie pas qu’un humain a joué autant de parties : c’est une vérification automatique du calcul.
+Les 22 tests historiques réussissent. Trois scénarios supplémentaires du support du 18 novembre ont été exécutés et réussissent aussi ; voir le README et le rapport associé. Un de ces tests compare les indices de toutes les 1 679 616 paires de codes possibles à un autre calcul de référence. Ce nombre ne signifie pas qu’un humain a joué autant de parties : c’est une vérification automatique du calcul.
 
 ### Le projet a été documenté et publié séparément
 
@@ -127,12 +128,12 @@ C’est un petit parcours pour prendre le jeu en main. Il ne remplace pas tous l
 
 ## 7. Ce qu’il faut transmettre
 
-Tu peux transmettre les trois liens suivants sur la plateforme demandée par le cours :
+Le support du 18 novembre précise de déposer **jalon1_sordet.docx sur Cyberlearn**. Ce fichier est préparé dans le sous-dossier local livraison et fourni dans le chat. Il contient les trois références suivantes :
 
 - Dépôt : https://github.com/amelieheg/code_secret_1
 - Application : https://amelieheg.github.io/code_secret_1/
 - Version de remise : https://github.com/amelieheg/code_secret_1/tree/jalon-1
 
-Le README est déjà dans le dépôt et les preuves sont déjà liées depuis le README : il n’est pas nécessaire de recopier ces documents dans le message, sauf demande particulière du cours. Le présent guide est disponible depuis le README de la branche principale pour faciliter ta relecture.
+Le code, le README et les preuves restent sur GitHub. Le fichier Word sert à transmettre officiellement les liens et le tag sur Cyberlearn ; les liens seuls dans un message ne remplacent pas ce document. Ouvre le Word, contrôle ton nom et ses liens, puis dépose-le toi-même dans l’activité du cours avant le 20 novembre au soir. Aucune vidéo ni archive ZIP n’est demandée pour J1. Le présent guide et les compléments du 18 novembre restent disponibles sur la branche principale ; le tag conserve la version du jeu déjà testée.
 
 Avant l’envoi, lis surtout la décision avec Codex, la correction et les limites : tu dois pouvoir les expliquer avec tes mots. Tu n’as pas besoin de comprendre chaque ligne de JavaScript pour comprendre ces trois éléments.
