@@ -4,9 +4,10 @@
   "private": true,
   "description": "Jeu de déduction de quatre couleurs — rendu pédagogique J1",
   "scripts": {
-    "test": "node game.test.js",
+    "test": "node game.test.js && node tests/atelier5.test.cjs",
     "test:rapport": "node game.test.js --rapport",
-    "check": "node --check game.js && node --check app.js && node --check game.test.js"
+    "check": "node --check game.js && node --check app.js && node --check game.test.js && node --check tests/atelier5.test.cjs",
+    "test:atelier5": "node tests/atelier5.test.cjs"
   },
   "engines": {
     "node": ">=18"

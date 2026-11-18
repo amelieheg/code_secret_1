@@ -1,0 +1,71 @@
+[
+  {
+    "id": "normal",
+    "type": "Cas normal",
+    "secret": [
+      "rouge",
+      "bleu",
+      "vert",
+      "jaune"
+    ],
+    "guess": [
+      "rouge",
+      "bleu",
+      "orange",
+      "violet"
+    ],
+    "expected": {
+      "ok": true,
+      "exact": 2,
+      "misplaced": 0,
+      "attempts": 1,
+      "historyLength": 1
+    },
+    "description": "Une proposition valide donne deux indices et consomme exactement un essai."
+  },
+  {
+    "id": "quatre-rouges",
+    "type": "Cas limite avec répétitions",
+    "secret": [
+      "rouge",
+      "rouge",
+      "bleu",
+      "vert"
+    ],
+    "guess": [
+      "rouge",
+      "rouge",
+      "rouge",
+      "rouge"
+    ],
+    "expected": {
+      "ok": true,
+      "exact": 2,
+      "misplaced": 0,
+      "attempts": 1,
+      "historyLength": 1
+    },
+    "description": "Cas du cours : les deux rouges bien placés ne doivent pas être comptés une seconde fois."
+  },
+  {
+    "id": "incomplete",
+    "type": "Cas négatif",
+    "secret": [
+      "rouge",
+      "rouge",
+      "bleu",
+      "vert"
+    ],
+    "guess": [
+      "rouge",
+      "bleu",
+      "vert"
+    ],
+    "expected": {
+      "ok": false,
+      "attempts": 0,
+      "historyLength": 0
+    },
+    "description": "Trois couleurs doivent être refusées avec une explication, sans changer le compteur ni l’historique."
+  }
+]
