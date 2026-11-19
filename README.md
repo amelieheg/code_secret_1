@@ -8,7 +8,7 @@ Jeu solo de déduction destiné aux personnes qui veulent résoudre un code de q
 
 ## Comprendre les modifications quand on débute
 
-Le [guide pour comprendre le projet et le rendu](docs/COMPRENDRE-JALON-1.md) explique le rôle de chaque fichier, les changements, les commits et les trois liens à transmettre. Il contient aussi un tableau qui associe chaque exigence du 20 novembre à sa preuve.
+Le [guide pour comprendre le projet et le rendu](docs/COMPRENDRE-JALON-1.md) explique le rôle de chaque fichier, les changements, les commits et les trois liens à transmettre. Il contient aussi un tableau qui associe chaque exigence du 20 novembre à sa preuve. Les [changements du 18 novembre](docs/CHANGEMENTS-18-NOVEMBRE.md) sont expliqués séparément.
 
 Les changements principaux sont :
 
@@ -25,13 +25,8 @@ Ce résumé et le guide ont été ajoutés après la version étiquetée jalon-1
 - Disponible : partie complète, choix et modification des quatre couleurs, dix essais, historique, indices avec doublons, victoire, défaite et nouvelle partie.
 - Vérifié : 22 tests historiques du moteur et 3 scénarios supplémentaires exécutés le 18 novembre ; essais de l’interface et correction mobile détaillés dans les preuves. Le code du jeu reste identique dans ce nouveau dépôt.
 - Publication : jeu accessible dans le dépôt distinct code_secret_1 ; fichiers publiés comparés aux sources locales, sans différence de contenu.
-- Limites principales : pas de sauvegarde au rechargement ; smartphone réel et parcours clavier complet non vérifiés.
-
-## Remise officielle sur Cyberlearn
-
-Le support du 18 novembre et ses notes précisent de déposer **jalon1_sordet.docx** sur Cyberlearn avant le 20 novembre au soir. Le document contient le lien du dépôt, celui du jeu et le tag jalon-1. Il est préparé dans le dossier local livraison, gardé hors du dépôt Git, et fourni dans le chat. Vérifier l’activité et l’heure limite sur [Cyberlearn](https://cyberlearn.hes-so.ch/course/view.php?id=28968). Aucun ZIP ni vidéo ne sont demandés pour J1.
-
-Les [changements du 18 novembre expliqués simplement](docs/CHANGEMENTS-18-NOVEMBRE.md) distinguent les nouveaux tests, les compléments de documentation et les contrôles non réalisés.
+- Limites : la partie est perdue au rechargement ; le jeu sur smartphone réel et le parcours complet au clavier restent à vérifier.
+- Questions ouvertes : les couleurs sont-elles faciles à identifier sans distinguer leurs teintes ? Le jeu est-il confortable au clavier ?
 
 ## Règles et source
 
@@ -136,19 +131,6 @@ Test croisé avec un binôme : **non réalisé**, confirmé le 18 novembre. Il n
 ## Correction expliquée
 
 À une largeur de 760 px ou moins, la règle CSS `.guide,.little-note{display:none}` masquait aussi la légende des indices. L’attendu est de conserver les explications « Bien placée » et « Mal placée » sur petit écran. Le commit `a4438ce` retire `.guide` de cette règle. Voir la [preuve de code avant/après](docs/preuves/correction-mobile.txt), la [copie du CSS avant correction](docs/preuves/style-avant.css.txt) et les [captures de reproduction avant/après](docs/preuves/tests-navigateur.md). Le même essai à 390 px reproduit la légende masquée avec l’ancien CSS, puis visible avec le CSS corrigé, sans débordement horizontal. L’image « avant » est une reconstitution avec le CSS sauvegardé ; aucun essai sur téléphone réel n’est annoncé.
-
-## Limites et questions ouvertes
-
-- Le site publié correspond au même code que les essais de l’interface conservés dans les preuves. Le nouveau contrôle de publication vérifie les fichiers et leur disponibilité ; il ne constitue pas un nouvel essai complet du parcours dans le navigateur.
-- Les tests automatisés du moteur ne prouvent pas l’ergonomie, le parcours clavier complet ni le comportement tactile sur smartphone réel. Ces contrôles restent à faire.
-- Le code secret est caché dans l’interface pendant la partie ; ce jeu exécuté dans le navigateur ne cherche pas à empêcher l’inspection par les outils de développement.
-- L’historique est perdu au rechargement. Pas de sauvegarde ni de PWA.
-- Questions ouvertes : la présentation des couleurs est-elle assez lisible sans distinguer leurs teintes ? Le parcours clavier permet-il de jouer confortablement ?
-- API commune 0.2, essai du jeu d’un camarade et vidéo : réservés au jalon 2, hors du travail actuel.
-
-## Aide et reprise
-
-Projet maintenu par Amélie Sordet dans le cadre du cours. Pour signaler un problème, ouvrir une [issue du dépôt](https://github.com/amelieheg/code_secret_1/issues) en précisant les actions effectuées, le résultat attendu, le résultat observé et le navigateur utilisé. Les commandes de vérification et leurs résultats figurent ci-dessus ; les consignes de travail avec Codex sont dans [AGENTS.md](AGENTS.md).
 
 ## Fichiers
 

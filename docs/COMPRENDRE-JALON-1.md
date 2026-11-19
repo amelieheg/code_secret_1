@@ -14,11 +14,11 @@ Oui : les éléments demandés dans la [consigne du jalon 1](sources/consigne-j1
 | Règles et leur source | README : « Règles et source » ; document sources/regles.md | Présentes |
 | Choix de réalisation | README : « Décision prise avec Codex » | Choix expliqué et contrepartie indiquée |
 | Premiers résultats attendus | Tableau de la rubrique « Vérifier les règles » | Attendu et résultat observé distingués |
-| Questions ouvertes | README : « Limites et questions ouvertes » | Présentes |
+| Questions ouvertes | README : « État actuel » | Présentes |
 | Correction expliquée | README : « Correction expliquée » | Problème, attendu, changement et résultat décrits |
 | Preuves avant/après | Dossier preuves : CSS sauvegardé, extrait de correction et captures | Présentes ; l’image avant est une reconstitution annoncée |
 | Premiers tests | Rapport preuves/tests-regles.md et rapport du navigateur | 22 tests du moteur réussis ; essais d’interface documentés |
-| Court bilan des limites | README : « Limites et questions ouvertes » | Présent |
+| Court bilan des limites | README : « État actuel » | Présent |
 | Fichier Word sur Cyberlearn | Fichier local livraison/jalon1_sordet.docx, fourni dans le chat | Préparé ; dépôt à effectuer par l’étudiante |
 | Aucun extrait de conversation demandé | README : décision reformulée | Aucun historique de chat à transmettre |
 | Aucune vidéo à ce stade | Périmètre du rendu | Aucune vidéo nécessaire |
