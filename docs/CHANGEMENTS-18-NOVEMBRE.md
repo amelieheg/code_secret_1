@@ -27,9 +27,9 @@ Les commandes utiles sont npm run check et npm test depuis la racine du projet, 
 
 ## Le tag et le site
 
-Le tag jalon-1 désigne toujours 29c1ad3c574af110d656b061fc46fd3fa3f36273. Aucun tag existant n’est déplacé. Les nouveaux tests et explications sont ajoutés après ce tag. Ils portent sur un moteur identique à celui de la version étiquetée et ne modifient pas le jeu.
+Le 18 novembre, le tag jalon-1 désignait 29c1ad3c574af110d656b061fc46fd3fa3f36273. Les nouveaux tests et explications avaient alors été ajoutés après ce tag, sans modifier le jeu.
 
-Le fichier Word donne le tag et le commit exacts. Les nouveaux compléments sont accessibles depuis le README de la branche principale. Il n’est pas nécessaire de déplacer le tag pour disposer d’une première version J1 déjà documentée, testée et publiée.
+Actualisation du 19 novembre : l’étudiante demande que le tag contienne aussi le README révisé. Le tag jalon-1 est donc mis à jour sur la nouvelle version de remise ; l’ancien repère est sauvegardé sous archive-jalon-1-avant-readme-19-novembre. Les fichiers du jeu ne changent pas et le Word est mis en cohérence avec le nouveau commit.
 
 ## Ce qui reste à faire par l’étudiante
 

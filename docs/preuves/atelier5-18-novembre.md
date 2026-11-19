@@ -1,5 +1,8 @@
 # Scénarios exécutés après lecture du support S5
 
+Note du 19 novembre 2026 : ce rapport conserve les observations et le tag tels qu’ils étaient à la date du contrôle. L’ancien commit 29c1ad3 reste accessible sous le tag d’archive archive-jalon-1-avant-readme-19-novembre. Le tag jalon-1 est actualisé, à la demande de l’étudiante, pour inclure le README révisé ; les fichiers du jeu restent identiques.
+
+
 Date et heure UTC : 2026-11-18T10:42:37.424Z
 Environnement : Node.js v24.22.3, win32.
 Commande : node tests/atelier5.test.cjs --rapport

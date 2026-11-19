@@ -10,7 +10,7 @@ Oui : les éléments demandés dans la [consigne du jalon 1](sources/consigne-j1
 | --- | --- | --- |
 | Lien du dépôt | Début du README | Présent : code_secret_1 |
 | Lien de l’application | Début du README | Site publié et vérifié |
-| Version repérée par le tag jalon-1 | Lien « Version de remise » dans le README | Publié sur GitHub, commit 29c1ad3 |
+| Version repérée par le tag jalon-1 | Lien « Version de remise » dans le README | Version actualisée le 19 novembre avec le README révisé |
 | Règles et leur source | README : « Règles et source » ; document sources/regles.md | Présentes |
 | Choix de réalisation | README : « Décision prise avec Codex » | Choix expliqué et contrepartie indiquée |
 | Premiers résultats attendus | Tableau de la rubrique « Vérifier les règles » | Attendu et résultat observé distingués |
@@ -105,9 +105,9 @@ Un commit est un enregistrement de fichiers dans Git avec un message. Il permet 
 | 310e3f9 | Les ajustements selon les guides README et AGENTS. |
 | 29c1ad3 | Les liens et preuves finalisés pour le nouveau dépôt. |
 
-Un tag est une étiquette qui permet de retrouver un commit précis. Le tag [jalon-1](https://github.com/amelieheg/code_secret_1/tree/jalon-1) désigne le commit 29c1ad3 dans ce dépôt.
+Un tag est une étiquette qui permet de retrouver un commit précis. Le tag [jalon-1](https://github.com/amelieheg/code_secret_1/tree/jalon-1) désigne la version de remise actualisée le 19 novembre, qui contient le README révisé. Le lien du tag permet de voir le commit exact.
 
-Ce guide et le résumé pédagogique du README sont ajoutés après ce tag. Ils expliquent le travail sans changer les fichiers du jeu ni déplacer la version de remise. Le tag ne contient donc pas ce guide supplémentaire ; il contient déjà tous les éléments requis pour J1.
+À la demande de l’étudiante, le tag jalon-1 est déplacé le 19 novembre sur la version qui inclut le README allégé, ce guide et les compléments de test. Le jeu reste identique. L’ancienne version 29c1ad3 est conservée sous le tag archive-jalon-1-avant-readme-19-novembre. Le fichier Word de remise indique le nouveau commit.
 
 ## 5. Ce qui reste limité
 
@@ -134,6 +134,6 @@ Le support du 18 novembre précise de déposer **jalon1_sordet.docx sur Cyberlea
 - Application : https://amelieheg.github.io/code_secret_1/
 - Version de remise : https://github.com/amelieheg/code_secret_1/tree/jalon-1
 
-Le code, le README et les preuves restent sur GitHub. Le fichier Word sert à transmettre officiellement les liens et le tag sur Cyberlearn ; les liens seuls dans un message ne remplacent pas ce document. Ouvre le Word, contrôle ton nom et ses liens, puis dépose-le toi-même dans l’activité du cours avant le 20 novembre au soir. Aucune vidéo ni archive ZIP n’est demandée pour J1. Le présent guide et les compléments du 18 novembre restent disponibles sur la branche principale ; le tag conserve la version du jeu déjà testée.
+Le code, le README et les preuves restent sur GitHub. Le fichier Word sert à transmettre officiellement les liens et le tag sur Cyberlearn ; les liens seuls dans un message ne remplacent pas ce document. Ouvre le Word, contrôle ton nom et ses liens, puis dépose-le toi-même dans l’activité du cours avant le 20 novembre au soir. Aucune vidéo ni archive ZIP n’est demandée pour J1. Le présent guide, les compléments du 18 novembre et le README révisé font partie de la version actualisée du tag jalon-1.
 
 Avant l’envoi, lis surtout la décision avec Codex, la correction et les limites : tu dois pouvoir les expliquer avec tes mots. Tu n’as pas besoin de comprendre chaque ligne de JavaScript pour comprendre ces trois éléments.

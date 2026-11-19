@@ -18,7 +18,7 @@ Les changements principaux sont :
 - Ajout des tests : ils vérifient notamment les répétitions et la victoire au dixième essai.
 - Documentation et publication : README pour les lecteurs, AGENTS.md pour Codex, dépôt GitHub et site jouable séparés de l’ancien test.
 
-Ce résumé et le guide ont été ajoutés après la version étiquetée jalon-1. Ils complètent les explications sans modifier le jeu ni déplacer le tag. Les éléments requis pour le rendu sont déjà présents dans cette version étiquetée.
+La version de remise jalon-1 est actualisée le 19 novembre pour inclure ce README allégé, le guide et les tests de l’atelier 5. Les fichiers du jeu restent inchangés. Le [contrôle de remise du 19 novembre](docs/preuves/remise-19-novembre.md) consigne les vérifications ; les rapports plus anciens gardent leur date et leur version de référence.
 
 ## État actuel
 
@@ -122,7 +122,7 @@ Chaque cas part d’une nouvelle partie avec zéro essai et un historique vide. 
 | Limite du cours | rouge, rouge, bleu, vert | proposer quatre rouges | 2 bien placées, 0 mal placée ; 1 essai et 1 entrée d’historique | Conforme : 2 / 0, 1 essai, 1 entrée |
 | Négatif | rouge, rouge, bleu, vert | proposer rouge, bleu, vert | refus expliqué ; zéro essai, état et historique inchangés | Conforme : refus expliqué, zéro essai, état inchangé |
 
-Commande exécutée : `node tests/atelier5.test.cjs --rapport`. Résultat du 18 novembre : **3 scénarios réussis sur 3**, avec Node.js 24.22.3 sous Windows. Voir la [sortie détaillée avec attendu et obtenu](docs/preuves/atelier5-18-novembre.md). Le commit du dossier au lancement était 9a44362 ; la comparaison réelle confirme que le moteur est identique à celui du tag jalon-1, commit 29c1ad3.
+Commande exécutée : `node tests/atelier5.test.cjs --rapport`. Résultat du 18 novembre : **3 scénarios réussis sur 3**, avec Node.js 24.22.3 sous Windows. Voir la [sortie détaillée avec attendu et obtenu](docs/preuves/atelier5-18-novembre.md). Le commit du dossier au lancement était 9a44362 ; la comparaison réelle confirme que le moteur est identique à celui du commit de référence 29c1ad3 utilisé ce jour-là. Le tag de remise est ensuite actualisé le 19 novembre avec le README révisé, sans changer ce moteur.
 
 Le site publié a aussi été ouvert et utilisé le 18 novembre : proposition incomplète refusée sans essai, proposition complète enregistrée et redémarrage vérifié. Voir le [résultat des clics dans le navigateur](docs/preuves/site-18-novembre.md). Ce contrôle ne connaît pas le secret tiré par le site.
 

@@ -1,5 +1,8 @@
 # Vérification du site publié le 18 novembre 2026
 
+Note du 19 novembre 2026 : ce rapport conserve les observations et le tag tels qu’ils étaient à la date du contrôle. L’ancien commit 29c1ad3 reste accessible sous le tag d’archive archive-jalon-1-avant-readme-19-novembre. Le tag jalon-1 est actualisé, à la demande de l’étudiante, pour inclure le README révisé ; les fichiers du jeu restent identiques.
+
+
 Adresse : https://amelieheg.github.io/code_secret_1/
 
 Contrôle effectué dans le navigateur intégré de l’application, par clics sur les boutons visibles. Le secret est celui tiré aléatoirement par le site ; il n’a pas été fixé ni lu. Ce contrôle ne constitue pas un test humain en binôme.
