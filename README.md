@@ -55,6 +55,29 @@ Ouvrez [le jeu publié](https://amelieheg.github.io/code_secret_1/) dans un navi
 
 Le choix retenu avec Codex est de séparer le calcul des règles (`game.js`) de l’interface (`app.js`). Cela permet de vérifier les doublons et la fin de partie avec des codes connus sans dépendre d’un tirage aléatoire à l’écran. La contrepartie est de devoir aussi tester l’interface : un moteur correct ne prouve pas que les boutons et l’affichage fonctionnent.
 
+## À quoi sert Node.js dans ce projet
+
+**JavaScript** est le langage de programmation utilisé pour les règles et les interactions du jeu. Quand on ouvre le jeu, le navigateur exécute ce langage pour faire fonctionner les boutons, calculer les indices et afficher le résultat.
+
+**Node.js** est un logiciel qui permet aussi d’exécuter du JavaScript directement sur un ordinateur, sans ouvrir la page du jeu. Dans ce projet, il sert à lancer les **tests automatiques** : le programme essaie des propositions connues et compare les réponses du jeu aux réponses attendues.
+
+Par exemple, la commande `node game.test.js` signifie : « utiliser Node.js pour exécuter le fichier de tests game.test.js ». Une commande est une instruction écrite dans un terminal, une fenêtre qui permet de demander une action à l’ordinateur. Pour ce projet, ces commandes se lancent depuis le dossier principal, celui qui contient README.md et package.json.
+
+| Pour faire quoi | Ce qui est nécessaire |
+| --- | --- |
+| Jouer ou faire essayer le jeu | Un navigateur et le lien du jeu. Aucune installation de Node.js nécessaire. |
+| Relancer les tests sur son ordinateur | Node.js, puis les commandes indiquées ci-dessous. |
+| Vérifier le code automatiquement sur GitHub | Le fichier de configuration de GitHub prépare Node.js et lance les tests sur les ordinateurs de GitHub. |
+
+**npm** est un outil généralement fourni avec Node.js. Ici, il sert à lancer les raccourcis définis dans le fichier package.json :
+
+- `npm test` lance les 22 tests historiques et les 3 scénarios de l’atelier 5.
+- `npm run check` vérifie que les fichiers JavaScript ne contiennent pas d’erreur de syntaxe, c’est-à-dire d’erreur dans la façon d’écrire le code. Ce contrôle seul ne prouve pas que les règles sont correctes.
+
+Quand un rapport indique « Node.js 24.22.3 », ce nombre désigne la version du logiciel utilisé pour les tests. Le préciser aide une autre personne à reproduire les vérifications.
+
+**Pour utiliser le jeu et remettre le fichier Word de J1, aucune installation de Node.js n’est nécessaire.**
+
 ## Interface JavaScript interne
 
 Cette interface sert actuellement au jeu et aux tests locaux. Sa conformité au contrat commun 0.2 n’est pas établie ; ce travail appartient au jalon 2.
