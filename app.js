@@ -1,6 +1,7 @@
 'use strict';
 const { PALETTE, MAX_ATTEMPTS, createGame } = CodeSecret;
-const game = createGame();
+const testMode = CodeSecretApi.isTestMode(window.location.search);
+const game = createGame(Math.random, { autoStart: !testMode });
 const byId = id => document.getElementById(id);
 let draft = [null, null, null, null];
 let selected = 0;
@@ -36,10 +37,12 @@ function renderDraft() {
 
 function render() {
   const state = game.getState();
-  const ended = state.status !== 'playing';
+  const canPlay = state.status === 'playing';
+  const notStarted = state.status === 'not-started';
+  const ended = state.status === 'won' || state.status === 'lost';
   byId('rows').replaceChildren(...Array.from({ length: MAX_ATTEMPTS }, (_, index) => {
     const entry = state.history[index];
-    const active = !ended && index === state.attempts;
+    const active = canPlay && index === state.attempts;
     const row = document.createElement('div');
     row.className = `game-row${active ? ' active' : ''}${entry && entry.exact === 4 ? ' win-row' : ''}`;
     const number = document.createElement('span');
@@ -72,13 +75,13 @@ function render() {
   }));
   byId('secret').setAttribute('aria-label', state.secret ? `Code secret : ${state.secret.join(', ')}` : 'Quatre couleurs cachées');
   byId('secret').classList.toggle('revealed', ended);
-  byId('attempt-counter').textContent = ended ? `${state.attempts} / 10 ESSAIS` : `ESSAI ${String(state.attempts + 1).padStart(2, '0')} / 10`;
-  byId('submit').disabled = ended;
-  document.querySelectorAll('.color-choice').forEach(button => { button.disabled = ended; });
-  byId('composer-title').textContent = state.status === 'won' ? 'Le secret est percé !' : state.status === 'lost' ? 'Le mystère est dévoilé.' : 'Suivez votre intuition.';
-  byId('composer-description').textContent = ended ? 'Le code est révélé sur le plateau. Une autre partie ?' : 'Sélectionnez un emplacement, puis une couleur.';
-  byId('turn-title').textContent = state.status === 'won' ? 'BIEN JOUÉ !' : state.status === 'lost' ? 'PARTIE TERMINÉE' : 'À VOUS DE JOUER';
-  byId('board-status').textContent = ended ? state.status === 'won' ? `Victoire en ${state.attempts} essai${state.attempts > 1 ? 's' : ''}. À vous le secret !` : 'Dix essais écoulés. Un nouveau secret vous attend.' : state.attempts === 0 ? 'Le secret est bien gardé. À vous de jouer.' : `${state.remaining} essai${state.remaining > 1 ? 's' : ''} restant${state.remaining > 1 ? 's' : ''}. Chaque indice vous rapproche.`;
+  byId('attempt-counter').textContent = notStarted ? 'AUCUN ESSAI' : ended ? `${state.attempts} / 10 ESSAIS` : `ESSAI ${String(state.attempts + 1).padStart(2, '0')} / 10`;
+  byId('submit').disabled = !canPlay;
+  document.querySelectorAll('.color-choice').forEach(button => { button.disabled = !canPlay; });
+  byId('composer-title').textContent = notStarted ? 'Prêt pour une partie de test.' : state.status === 'won' ? 'Le secret est percé !' : state.status === 'lost' ? 'Le mystère est dévoilé.' : 'Suivez votre intuition.';
+  byId('composer-description').textContent = notStarted ? 'Cliquez sur Nouvelle partie pour commencer.' : ended ? 'Le code est révélé sur le plateau. Une autre partie ?' : 'Sélectionnez un emplacement, puis une couleur.';
+  byId('turn-title').textContent = notStarted ? 'EN ATTENTE' : state.status === 'won' ? 'BIEN JOUÉ !' : state.status === 'lost' ? 'PARTIE TERMINÉE' : 'À VOUS DE JOUER';
+  byId('board-status').textContent = notStarted ? 'Aucune partie démarrée.' : ended ? state.status === 'won' ? `Victoire en ${state.attempts} essai${state.attempts > 1 ? 's' : ''}. À vous le secret !` : 'Dix essais écoulés. Un nouveau secret vous attend.' : state.attempts === 0 ? 'Le secret est bien gardé. À vous de jouer.' : `${state.remaining} essai${state.remaining > 1 ? 's' : ''} restant${state.remaining > 1 ? 's' : ''}. Chaque indice vous rapproche.`;
   renderDraft();
 }
 
@@ -105,23 +108,44 @@ PALETTE.forEach(color => {
   byId('palette').append(button);
 });
 
-byId('submit').addEventListener('click', () => {
-  const result = game.submit(draft);
-  if (!result.ok) { message(result.error, 'error'); return; }
-  if (result.state.status === 'won') message(`Bravo ! Vous avez trouvé le code en ${result.state.attempts} essai${result.state.attempts > 1 ? 's' : ''}.`, 'success');
-  else if (result.state.status === 'lost') message('Les dix essais sont écoulés. Lancez une nouvelle partie pour retenter votre chance.');
-  else {
+// Les boutons et l’API passent tous deux par ces deux actions communes.
+function submitSharedGuess(guess) {
+  const result = game.submit(guess);
+  if (!result.ok) {
+    message(result.error, 'error');
+    render();
+    return;
+  }
+  if (result.state.status === 'won') {
+    draft = guess.slice();
+    message(`Bravo ! Vous avez trouvé le code en ${result.state.attempts} essai${result.state.attempts > 1 ? 's' : ''}.`, 'success');
+  } else if (result.state.status === 'lost') {
+    draft = guess.slice();
+    message('Les dix essais sont écoulés. Lancez une nouvelle partie pour retenter votre chance.');
+  } else {
     message(`${result.exact} bien placée${result.exact > 1 ? 's' : ''}, ${result.misplaced} mal placée${result.misplaced > 1 ? 's' : ''}. À vous d’affiner !`);
     draft = [null, null, null, null];
     selected = 0;
   }
   render();
-});
-byId('new-game').addEventListener('click', () => {
-  game.newGame();
+}
+
+function startSharedGame(options) {
+  // Un démarrage invalide lève une erreur avant toute modification de l’écran.
+  game.startGame(options);
   draft = [null, null, null, null];
   selected = 0;
   message('Un nouveau secret vous attend. À vous de jouer !');
   render();
-});
+}
+
+byId('submit').addEventListener('click', () => submitSharedGuess(draft));
+byId('new-game').addEventListener('click', () => startSharedGame());
+if (testMode) message('Mode test : démarrez une partie pour commencer.');
 render();
+if (testMode) {
+  window.codeSecretTest = CodeSecretApi.createTestApi(game, {
+    startGame: startSharedGame,
+    submitGuess: submitSharedGuess
+  });
+}

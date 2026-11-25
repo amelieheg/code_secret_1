@@ -1,10 +1,10 @@
 # Code secret
 
-Jeu solo de déduction destiné aux personnes qui veulent résoudre un code de quatre couleurs en dix essais. Inspiré du Mastermind, il est réalisé avec Codex pour le cours. Cette première version prépare uniquement le **jalon 1 du 20 novembre 2026 au soir**.
+Jeu solo de déduction destiné aux personnes qui veulent résoudre un code de quatre couleurs en dix essais. Inspiré du Mastermind, il est réalisé avec Codex pour le cours. Le **jalon 1 du 20 novembre reste conservé** ; le développement courant ajoute l’API commune 0.2 pour la suite du projet.
 
 - Dépôt : [amelieheg/code_secret_1](https://github.com/amelieheg/code_secret_1).
 - Application : [jouer à Code secret](https://amelieheg.github.io/code_secret_1/).
-- Version de remise : [tag jalon-1](https://github.com/amelieheg/code_secret_1/tree/jalon-1), qui repère la version préparée pour ce dépôt distinct.
+- Version remise à J1 : [tag jalon-1](https://github.com/amelieheg/code_secret_1/tree/jalon-1), conservé au commit dc50a1d. L’API 0.2 est ajoutée après cette version.
 
 ## Comprendre les modifications quand on débute
 
@@ -18,12 +18,12 @@ Les changements principaux sont :
 - Ajout des tests : ils vérifient notamment les répétitions et la victoire au dixième essai.
 - Documentation et publication : README pour les lecteurs, AGENTS.md pour Codex, dépôt GitHub et site jouable séparés de l’ancien test.
 
-La version de remise jalon-1 est actualisée le 19 novembre pour inclure ce README allégé, le guide et les tests de l’atelier 5. Les fichiers du jeu restent inchangés. Le [contrôle de remise du 19 novembre](docs/preuves/remise-19-novembre.md) consigne les vérifications ; les rapports plus anciens gardent leur date et leur version de référence.
+Pour J1, la version jalon-1 a été actualisée le 19 novembre avec le README allégé, le guide et les tests de l’atelier 5. Le développement du 25 novembre complète ensuite le moteur et l’interface pour l’API 0.2, sans déplacer ce tag. Le [contrôle de remise du 19 novembre](docs/preuves/remise-19-novembre.md) consigne les vérifications ; les rapports plus anciens gardent leur date et leur version de référence.
 
 ## État actuel
 
 - Disponible : partie complète, choix et modification des quatre couleurs, dix essais, historique, indices avec doublons, victoire, défaite et nouvelle partie.
-- Vérifié : 22 tests historiques du moteur et 3 scénarios supplémentaires exécutés le 18 novembre ; essais de l’interface et correction mobile détaillés dans les preuves. Le code du jeu reste identique dans ce nouveau dépôt.
+- Vérifié : 22 tests historiques, 3 scénarios S5, 31 tests API 0.2 et 17 contrôles du navigateur local ; résultats et limites dans le [bilan API](docs/preuves/api02-bilan-25-novembre.md).
 - Publication : jeu accessible dans le dépôt distinct code_secret_1 ; fichiers publiés comparés aux sources locales, sans différence de contenu.
 - Limites : la partie est perdue au rechargement ; le jeu sur smartphone réel et le parcours complet au clavier restent à vérifier.
 - Questions ouvertes : les couleurs sont-elles faciles à identifier sans distinguer leurs teintes ? Le jeu est-il confortable au clavier ?
@@ -66,27 +66,37 @@ Par exemple, la commande `node game.test.js` signifie : « utiliser Node.js pour
 
 **npm** est un outil généralement fourni avec Node.js. Ici, il sert à lancer les raccourcis définis dans le fichier package.json :
 
-- `npm test` lance les 22 tests historiques et les 3 scénarios de l’atelier 5.
+- `npm test` lance les 22 tests historiques, les 3 scénarios de l’atelier 5 et les 31 tests API.
 - `npm run check` vérifie que les fichiers JavaScript ne contiennent pas d’erreur de syntaxe, c’est-à-dire d’erreur dans la façon d’écrire le code. Ce contrôle seul ne prouve pas que les règles sont correctes.
 
 Quand un rapport indique « Node.js 24.22.3 », ce nombre désigne la version du logiciel utilisé pour les tests. Le préciser aide une autre personne à reproduire les vérifications.
 
 **Pour utiliser le jeu et remettre le fichier Word de J1, aucune installation de Node.js n’est nécessaire.**
 
-## Interface JavaScript interne
+## API commune de test 0.2
 
-Cette interface sert actuellement au jeu et aux tests locaux. Sa conformité au contrat commun 0.2 n’est pas établie ; ce travail appartient au jalon 2.
+L’API est un ensemble de fonctions JavaScript pour vérifier le jeu depuis le navigateur. Elle utilise **la même partie et le même moteur que les boutons du plateau**.
 
-`game.js` expose `CodeSecret` dans le navigateur et `module.exports` avec Node.js.
+Ouvrir [le jeu avec test=1](https://amelieheg.github.io/code_secret_1/?test=1) expose `window.codeSecretTest`, version `"0.2"`. Sans ce paramètre, cet objet est absent. En mode test, l’état initial est `not-started` ; en mode normal, une partie commence automatiquement.
 
-- `PALETTE` : `['rouge', 'bleu', 'vert', 'jaune', 'orange', 'violet']`.
-- `createGame()` : crée une partie avec quatre couleurs tirées indépendamment, répétitions possibles.
-- `game.submit(['rouge', 'bleu', 'vert', 'jaune'])` : retourne `{ ok, exact, misplaced, state }` si la proposition est valide, sinon `{ ok: false, error }` sans modifier la partie.
-- `game.getState()` : fournit une copie de l’historique, le nombre d’essais, les essais restants et le statut (`playing`, `won`, `lost`). Le code secret est `null` pendant la partie et révélé à la fin.
-- `game.newGame()` : effectue un nouveau tirage et remet l’état à zéro.
-- `score(secret, guess)` : calcule les indices de deux tableaux de quatre couleurs valides, en comptant d’abord les couleurs bien placées puis les occurrences restantes.
+- `getConfig()` lit les règles et la palette.
+- `getState()` lit l’état sans le modifier et sans retourner le secret.
+- `await startGame({ secret: [...] })` démarre avec quatre couleurs imposées ; sans option, le code est aléatoire.
+- `await submitGuess([...])` envoie une proposition et attend que l’écran soit à jour.
 
-La partie reste en mémoire jusqu’à une nouvelle partie ou au rechargement de la page.
+Exemple à exécuter dans la console du navigateur en mode test :
+
+```js
+const api = window.codeSecretTest;
+await api.startGame({ secret: ["rouge", "rouge", "bleu", "vert"] });
+const state = await api.submitGuess(["rouge", "bleu", "rouge", "vert"]);
+// state.lastResult : { wellPlaced: 2, misplaced: 2 }
+// state.attempts : 1 ; même proposition et mêmes indices sur le plateau.
+```
+
+Un refus de proposition est décrit par `lastError`, sans essai consommé. Un démarrage invalide rejette une erreur et conserve toute la partie. Les tableaux et les états retournés sont des copies.
+
+La [documentation API et les changements expliqués](docs/API-0.2.md) présentent les écarts initiaux, le fonctionnement commun et les vérifications, à partir du [contrat 0.2 fourni](https://docs.google.com/document/d/1hxqc3QfG0PTknulNIisBvg-0h0W7CjRe6eHC1q_jBYU/edit).
 
 ## Vérifier les règles
 
@@ -102,7 +112,7 @@ Les tests couvrent les répétitions, les propositions invalides, la victoire au
 | Dix propositions fausses, puis une proposition supplémentaire | Défaite puis refus sans mutation | Réussi dans les tests du moteur |
 | Nouvelle partie après une fin | Historique vide, dix essais, code caché | Réussi dans les tests du moteur |
 
-Les résultats détaillés et l’environnement figurent dans la [preuve d’exécution](docs/preuves/tests-regles.md), régénérable par `node game.test.js --rapport`. Le code du moteur testé est celui du commit `3e2f7e0`, inchangé depuis ; les tests enrichis sont inclus dans la version de remise.
+Les résultats détaillés et l’environnement figurent dans la [preuve d’exécution](docs/preuves/tests-regles.md), régénérable par `node game.test.js --rapport`. Ce rapport historique décrit le moteur initial du commit `3e2f7e0`. Les mêmes cas ont été rejoués après intégration de l’API le 25 novembre, avec le contrôle des nouveaux codes de refus : voir le [bilan API](docs/preuves/api02-bilan-25-novembre.md).
 
 Résultat de l’exécution locale : **22 tests réussis, aucun échec**, avec Node.js 24.22.1 ; les trois fichiers JavaScript passent également le contrôle `node --check`. Le test du calcul des indices compare les 1 679 616 paires possibles de codes à un calcul de référence indépendant.
 
@@ -136,9 +146,11 @@ Test croisé avec un binôme : **non réalisé**, confirmé le 18 novembre. Il n
 
 - `index.html` : interface française.
 - `style.css` : présentation et adaptation aux petits écrans.
-- `game.js` : règles et API du jeu.
+- `game.js` : moteur partagé et calcul des indices.
+- `api.js` : façade publique du contrat 0.2, reliée à la partie de l’interface.
 - `app.js` : interactions et affichage.
-- `game.test.js` : tests des règles.
+- `game.test.js` : tests historiques des règles.
+- `tests/api02.test.cjs` et `tests/api02.browser.cjs` : contrat et intégration avec le plateau.
 - `AGENTS.md` : consignes durables pour travailler avec Codex.
 - `.github/workflows/` : tests et publication Pages vérifiés sur le nouveau dépôt.
 

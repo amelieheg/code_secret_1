@@ -71,7 +71,9 @@ test('R3 — Les couleurs interdites et les majuscules sont refusées sans mutat
   ['rose', 'Rouge', 'red', 1, {}].forEach(color => {
     const result = game.submit([color, 'rouge', 'rouge', 'rouge']);
     assert.equal(result.ok, false);
-    assert.match(result.error, /non autorisée/);
+    const isColor = typeof color === 'string';
+    assert.match(result.error, isColor ? /non autorisée/ : /nom de couleur/);
+    assert.equal(game.getApiState().lastError.code, isColor ? 'invalid-color' : 'invalid-type');
     assert.deepEqual(game.getState(), before);
   });
 });

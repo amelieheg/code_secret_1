@@ -57,7 +57,7 @@ if(process.argv.includes('--rapport')){
     'Commit du dossier au lancement : '+version+'.',
     'Version figée de remise : jalon-1, commit '+tag+'.',
     'Comparaison réelle de game.js avec le tag : '+(identical===true?'contenu identique après normalisation des retours de ligne':String(identical))+'.',
-    'Les quatre fichiers publiés du jeu restent inchangés ; seuls les tests et la documentation sont complétés.',
+    'Ce rapport décrit le moteur local au moment de l’exécution. La comparaison au tag J1 est indiquée ci-dessus ; si elle diffère, ce rapport ne prétend pas tester le même code que J1.',
     'Empreinte Git du fichier des attendus : '+git('hash-object','tests/scenarios-atelier5.json')+'.','',
     'Les attendus ont été écrits dans le README et dans tests/scenarios-atelier5.json avant cette exécution. Ils proviennent du raisonnement sur les règles, pas du résultat du jeu.',
     'Le tirage est contrôlé seulement dans les instances locales de test. Ce n’est pas une implémentation de l’API commune 0.2.',''
