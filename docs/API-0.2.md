@@ -53,6 +53,8 @@ Résultats : [bilan du 25 novembre](preuves/api02-bilan-25-novembre.md), [rappor
 
 Les tests couvrent API vers écran, clics vers API, victoire/défaite au dixième essai, refus sans changement, getters sans effets, copies et rechargement. Leurs attendus sont écrits avant l’exécution.
 
+Les 17 contrôles de navigateur ont également réussi sur le site publié du commit 52d856e : [rapport en ligne](preuves/api02-navigateur-publie-25-novembre.json). Les cinq fichiers servis ont été comparés aux sources sans différence de contenu.
+
 ## Limites
 
 Le contrôle de l’enseignant n’a pas été exécuté. Smartphone réel, parcours clavier complet, lecteur d’écran, essai humain avec un binôme et autres navigateurs restent à vérifier. La largeur de 390 pixels est une simulation.

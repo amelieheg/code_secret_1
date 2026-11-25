@@ -1,0 +1,37 @@
+{
+  "checkedAt": "2026-11-25T10:51:46.736Z",
+  "commit": "52d856e482b2a49ab9041d3dffc6b35c2915c1f6",
+  "normalization": "CRLF vers LF",
+  "results": [
+    {
+      "name": "index.html",
+      "status": 200,
+      "identical": true,
+      "sha256": "4dabbe07ac6a39a2783318862e64f28940349e42926b272224c7de370239301a"
+    },
+    {
+      "name": "style.css",
+      "status": 200,
+      "identical": true,
+      "sha256": "75d62eb4e1ee1136d7d423c9c8b941d13e517f9b878d430d6dd9ef79d81acb48"
+    },
+    {
+      "name": "game.js",
+      "status": 200,
+      "identical": true,
+      "sha256": "b77fe7ec05c79a6fda2ded8f90c441b59f4e58706db9deee7019c5b85a5fafd7"
+    },
+    {
+      "name": "api.js",
+      "status": 200,
+      "identical": true,
+      "sha256": "bd88dd8353c566f7ab84501aa29ac0fc07fcc0b52ee2bbd89975ecc74cfd0e75"
+    },
+    {
+      "name": "app.js",
+      "status": 200,
+      "identical": true,
+      "sha256": "ab663d0679d8efa1c8f0d7380afdd13446871f2bb0ca198386a4b4b8a3948983"
+    }
+  ]
+}

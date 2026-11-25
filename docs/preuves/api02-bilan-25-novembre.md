@@ -12,6 +12,8 @@ Base Git avant enregistrement des changements : dc50a1d089415d84650c066b40e44982
 | Scénarios S5 | 3 réussites | 3 réussites | Réussi |
 | Contrat API dont T01 à T09 | 31 réussites | 31 réussites, 0 échec | Réussi |
 | Intégration locale API et véritable plateau | 17 contrôles réussis | 17 réussites, aucune erreur pageerror | Réussi |
+| Même suite sur GitHub Pages | 17 contrôles réussis | 17 réussites, aucune erreur pageerror | Réussi |
+| Cinq fichiers du site publié | HTTP 200 et contenu identique aux sources | Conforme après normalisation des retours de ligne | Réussi |
 
 Les attendus sont définis dans les tests avant leur exécution. Le même calcul des indices est utilisé par le jeu et l’API. Le test historique exhaustif compare toujours les 1 679 616 paires de codes possibles à un calcul indépendant.
 
@@ -30,6 +32,14 @@ API absente en mode normal et avec test=0 ; refus d’une proposition de trois c
 
 ## Publication et points non vérifiés
 
-La nouvelle version publiée de l’API reste à contrôler après l’envoi de ces changements. Les contrôles ci-dessus portent sur le serveur HTTP local isolé, servi sous le même préfixe /code_secret_1/ que GitHub Pages.
+La version publiée du commit 52d856e a été contrôlée le 25 novembre sur https://amelieheg.github.io/code_secret_1/. Les mêmes 17 contrôles de navigateur réussissent aussi sur ce site, sans erreur pageerror. Les cinq fichiers servis sont identiques aux sources après normalisation des retours de ligne.
+
+- [Rapport du navigateur sur le site publié](api02-navigateur-publie-25-novembre.json).
+- [Comparaison des cinq fichiers publiés](api02-fichiers-publies-25-novembre.json).
+- [Capture de l’API et du plateau publiés](api02-navigateur-publie-25-novembre.png).
+- [Tests GitHub réussis sur 52d856e](https://github.com/amelieheg/code_secret_1/actions/runs/45598716558).
+- [Publication standard Pages réussie sur 52d856e](https://github.com/amelieheg/code_secret_1/actions/runs/45598715683).
+
+Le workflow personnalisé a d’abord échoué en recherchant zéro puis deux paquets nommés github-pages après relance. Le paquet était présent et le site standard fonctionnait. La configuration est corrigée : préparation et déploiement dans deux jobs dépendants, avec nom de paquet propre à l’exécution et transmis au job de déploiement. La sélection du paquet ne dépend ainsi plus d’un nom partagé entre les tentatives. Le résultat courant est consultable dans les [exécutions de publication](https://github.com/amelieheg/code_secret_1/actions/workflows/pages.yml).
 Smartphone réel, autres navigateurs, parcours clavier complet, lecteur d’écran et binôme humain : non vérifiés. L’outil de vérification de l’enseignant n’a pas été exécuté.
 Le tag jalon-1 reste conservé au commit dc50a1d ; il ne désigne pas cette implémentation ultérieure de l’API.

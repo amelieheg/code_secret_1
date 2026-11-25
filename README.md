@@ -23,8 +23,8 @@ Pour J1, la version jalon-1 a été actualisée le 19 novembre avec le README al
 ## État actuel
 
 - Disponible : partie complète, choix et modification des quatre couleurs, dix essais, historique, indices avec doublons, victoire, défaite et nouvelle partie.
-- Vérifié : 22 tests historiques, 3 scénarios S5, 31 tests API 0.2 et 17 contrôles du navigateur local ; résultats et limites dans le [bilan API](docs/preuves/api02-bilan-25-novembre.md).
-- Publication : jeu accessible dans le dépôt distinct code_secret_1 ; fichiers publiés comparés aux sources locales, sans différence de contenu.
+- Vérifié : 22 tests historiques, 3 scénarios S5, 31 tests API 0.2 et 17 contrôles du navigateur, réussis localement puis sur le site publié ; résultats et limites dans le [bilan API](docs/preuves/api02-bilan-25-novembre.md).
+- Publication : API 0.2 et jeu accessibles sur GitHub Pages ; les cinq fichiers publiés correspondent au commit API 52d856e.
 - Limites : la partie est perdue au rechargement ; le jeu sur smartphone réel et le parcours complet au clavier restent à vérifier.
 - Questions ouvertes : les couleurs sont-elles faciles à identifier sans distinguer leurs teintes ? Le jeu est-il confortable au clavier ?
 
