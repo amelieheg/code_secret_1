@@ -1,0 +1,230 @@
+{
+  "testedAt": "2026-11-27T15:47:15.335Z",
+  "baseUrl": "https://amelieheg.github.io/code_secret_1/",
+  "sourceRevision": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+  "sourceSha256": {
+    "index.html": "145db5641284235a32ee8a87f98211b341226d3ae5cb45d7cd026a52325d0f81",
+    "style.css": "e3eef2cf777e94d9b24c8b9614a98cfc0e592fc7cde7aad34bc1b9beadef30d8",
+    "game.js": "b77fe7ec05c79a6fda2ded8f90c441b59f4e58706db9deee7019c5b85a5fafd7",
+    "api.js": "bd88dd8353c566f7ab84501aa29ac0fc07fcc0b52ee2bbd89975ecc74cfd0e75",
+    "app.js": "ab663d0679d8efa1c8f0d7380afdd13446871f2bb0ca198386a4b4b8a3948983",
+    "pwa.js": "aa23e404090b006339a5ba3dbb493c2a861cb48b2225f79efb02ede7640d9963",
+    "sw.js": "5c383d08f70366e8789d54f2e370c8d7edf9d4b8f9a7fb8f5b2dacca885642e9",
+    "manifest.webmanifest": "f168ecee4cb8868d114288db870c9ede8bb9d8b1f754e433faddb1a293d7755d",
+    "assets/icon-192.png": "283fce8f1c3c37b8ae4bb3247261929ad6d956647f9d6fca826b518e40e51c50",
+    "assets/icon-512.png": "0fe468a3bbacf31b950c7b2ec1f73cc25837303c5c79894d41f5b01d6cb77461",
+    "assets/icon-maskable-512.png": "0fe468a3bbacf31b950c7b2ec1f73cc25837303c5c79894d41f5b01d6cb77461",
+    "assets/apple-touch-icon.png": "6ac51fbde38743ba32be8ea3d14078e41edab615e3acdc7a98cf662405e30f44",
+    "assets/qr-code-secret.png": "fa698046848693eadc132ce01112de2661a7605686edec299770a13e3e83e9fb"
+  },
+  "browser": "158.0.4370.45",
+  "node": "v24.22.3",
+  "results": [
+    {
+      "name": "Manifeste et icônes du jeu normal",
+      "expected": "Code secret, démarrage sans test=1 dans le bon dossier, 192/512 PNG et icône maskable.",
+      "observed": {
+        "id": "./",
+        "name": "Code secret",
+        "short_name": "Code secret",
+        "description": "Trouvez le code de quatre couleurs en dix essais.",
+        "lang": "fr",
+        "start_url": "./",
+        "scope": "./",
+        "display": "standalone",
+        "background_color": "#f7f4ed",
+        "theme_color": "#f7f4ed",
+        "icons": [
+          {
+            "src": "assets/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+          },
+          {
+            "src": "assets/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+          },
+          {
+            "src": "assets/icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+          }
+        ]
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Service worker actif et limité au jeu",
+      "expected": "Scope /code_secret_1/, page contrôlée et tous les fichiers en cache.",
+      "observed": {
+        "scope": "https://amelieheg.github.io/code_secret_1/",
+        "state": "activated",
+        "controller": true,
+        "files": [
+          "/code_secret_1/index.html",
+          "/code_secret_1/style.css",
+          "/code_secret_1/game.js",
+          "/code_secret_1/api.js",
+          "/code_secret_1/app.js",
+          "/code_secret_1/pwa.js",
+          "/code_secret_1/manifest.webmanifest",
+          "/code_secret_1/assets/icon-192.png",
+          "/code_secret_1/assets/icon-512.png",
+          "/code_secret_1/assets/icon-maskable-512.png",
+          "/code_secret_1/assets/apple-touch-icon.png",
+          "/code_secret_1/assets/qr-code-secret.png"
+        ]
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Contrôle d’installabilité du navigateur",
+      "expected": "Manifeste reconnu et aucune erreur d’installabilité signalée par Edge.",
+      "observed": {
+        "manifestUrl": "https://amelieheg.github.io/code_secret_1/manifest.webmanifest",
+        "errors": [],
+        "installabilityErrors": []
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Jeu normal après préparation PWA",
+      "expected": "API absente, trois couleurs refusées sans essai, quatre acceptées.",
+      "observed": {
+        "api": "absente",
+        "historyLength": 1
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Aide d’installation et QR sur petit écran",
+      "expected": "Guide dépliable, QR chargé, lien public normal et aucun débordement à 360 px.",
+      "observed": {
+        "width": 345,
+        "scrollWidth": 345,
+        "qrWidth": 370,
+        "link": "https://amelieheg.github.io/code_secret_1/",
+        "help": "\n      Installer Code secret sur mon appareil\n      \n        \n          Votre jeu, depuis son icône.\n          Installez Code secret depuis votre navigateur pour l’ouvrir comme une application. L’installation est facultative et gratuite.\n          Installer Code secret\n          Ce navigateur propose l’installation de Code secret.\n          \n            Android · Chrome : ouvrez le menu ⋮ puis « Installer l’application » ou « Ajouter à l’écran d’accueil », selon ce qui est proposé.\n            iPhone · Safari : ouvrez le menu de partage puis « Sur l’écran d’accueil » ou « Ajouter à l’écran d’accueil ».\n            Ordinateur · Chrome ou Edge : utilisez l’icône d’installation dans la barre d’adresse ou la commande d’installation du menu.\n          \n          Confirmez le nom Code secret et l’icône aux quatre pions colorés, puis ouvrez le jeu depuis cette icône. Les commandes varient selon le navigateur.\n          Après un premier chargement en ligne réussi, le jeu peut s’ouvrir hors connexion. La partie en cours n’est pas sauvegardée : rouvrir ou recharger démarre une nouvelle partie.\n        \n        \n          \n          Scannez avec votre téléphone pour ouvrir le jeu, puis suivez l’aide d’installation.\n          amelieheg.github.io/code_secret_1/\n        \n      \n    "
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Ouverture normale hors connexion",
+      "expected": "Nouvelle partie jouable depuis les fichiers en cache ; API absente.",
+      "observed": {
+        "offline": true,
+        "historyLength": 1,
+        "api": "absente"
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "API et interface hors connexion",
+      "expected": "?test=1 conservé, état initial not-started ; coup API 2/2 visible et coup par clics dans le même historique.",
+      "observed": {
+        "state": {
+          "status": "playing",
+          "attempts": 2,
+          "history": [
+            {
+              "guess": [
+                "rouge",
+                "bleu",
+                "rouge",
+                "vert"
+              ],
+              "result": {
+                "wellPlaced": 2,
+                "misplaced": 2
+              }
+            },
+            {
+              "guess": [
+                "rouge",
+                "rouge",
+                "rouge",
+                "rouge"
+              ],
+              "result": {
+                "wellPlaced": 2,
+                "misplaced": 0
+              }
+            }
+          ],
+          "lastGuess": [
+            "rouge",
+            "rouge",
+            "rouge",
+            "rouge"
+          ],
+          "lastResult": {
+            "wellPlaced": 2,
+            "misplaced": 0
+          },
+          "lastError": null
+        },
+        "rows": 2
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Retour en ligne et API préservée",
+      "expected": "Même état initial et même calcul après navigation en ligne.",
+      "observed": {
+        "initial": {
+          "status": "not-started",
+          "attempts": 0,
+          "history": [],
+          "lastGuess": null,
+          "lastResult": null,
+          "lastError": null
+        },
+        "state": {
+          "status": "playing",
+          "attempts": 1,
+          "history": [
+            {
+              "guess": [
+                "rouge",
+                "bleu",
+                "rouge",
+                "vert"
+              ],
+              "result": {
+                "wellPlaced": 2,
+                "misplaced": 2
+              }
+            }
+          ],
+          "lastGuess": [
+            "rouge",
+            "bleu",
+            "rouge",
+            "vert"
+          ],
+          "lastResult": {
+            "wellPlaced": 2,
+            "misplaced": 2
+          },
+          "lastError": null
+        }
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Erreurs JavaScript",
+      "expected": "Aucune erreur pageerror.",
+      "observed": [],
+      "status": "réussi"
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "Contrôle automatisé isolé, sans installation réelle sur le téléphone ou l’ordinateur de l’étudiante.",
+    "L’absence d’erreur d’installabilité ne prouve pas le succès d’une installation utilisateur."
+  ]
+}

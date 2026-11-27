@@ -1,0 +1,98 @@
+{
+  "checkedAt": "2026-11-27T15:48:54.977Z",
+  "sourceRevision": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+  "normalization": "Retours de ligne normalisés pour les fichiers texte uniquement ; images comparées octet par octet.",
+  "records": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "matchesCommit": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+      "sha256": "145db5641284235a32ee8a87f98211b341226d3ae5cb45d7cd026a52325d0f81"
+    },
+    {
+      "file": "style.css",
+      "status": 200,
+      "contentType": "text/css; charset=utf-8",
+      "matchesCommit": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+      "sha256": "e3eef2cf777e94d9b24c8b9614a98cfc0e592fc7cde7aad34bc1b9beadef30d8"
+    },
+    {
+      "file": "game.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8",
+      "matchesCommit": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+      "sha256": "b77fe7ec05c79a6fda2ded8f90c441b59f4e58706db9deee7019c5b85a5fafd7"
+    },
+    {
+      "file": "api.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8",
+      "matchesCommit": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+      "sha256": "bd88dd8353c566f7ab84501aa29ac0fc07fcc0b52ee2bbd89975ecc74cfd0e75"
+    },
+    {
+      "file": "app.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8",
+      "matchesCommit": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+      "sha256": "ab663d0679d8efa1c8f0d7380afdd13446871f2bb0ca198386a4b4b8a3948983"
+    },
+    {
+      "file": "pwa.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8",
+      "matchesCommit": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+      "sha256": "aa23e404090b006339a5ba3dbb493c2a861cb48b2225f79efb02ede7640d9963"
+    },
+    {
+      "file": "sw.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=utf-8",
+      "matchesCommit": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+      "sha256": "5c383d08f70366e8789d54f2e370c8d7edf9d4b8f9a7fb8f5b2dacca885642e9"
+    },
+    {
+      "file": "manifest.webmanifest",
+      "status": 200,
+      "contentType": "application/manifest+json; charset=utf-8",
+      "matchesCommit": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+      "sha256": "f168ecee4cb8868d114288db870c9ede8bb9d8b1f754e433faddb1a293d7755d"
+    },
+    {
+      "file": "assets/icon-192.png",
+      "status": 200,
+      "contentType": "image/png",
+      "matchesCommit": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+      "sha256": "283fce8f1c3c37b8ae4bb3247261929ad6d956647f9d6fca826b518e40e51c50"
+    },
+    {
+      "file": "assets/icon-512.png",
+      "status": 200,
+      "contentType": "image/png",
+      "matchesCommit": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+      "sha256": "0fe468a3bbacf31b950c7b2ec1f73cc25837303c5c79894d41f5b01d6cb77461"
+    },
+    {
+      "file": "assets/icon-maskable-512.png",
+      "status": 200,
+      "contentType": "image/png",
+      "matchesCommit": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+      "sha256": "0fe468a3bbacf31b950c7b2ec1f73cc25837303c5c79894d41f5b01d6cb77461"
+    },
+    {
+      "file": "assets/apple-touch-icon.png",
+      "status": 200,
+      "contentType": "image/png",
+      "matchesCommit": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+      "sha256": "6ac51fbde38743ba32be8ea3d14078e41edab615e3acdc7a98cf662405e30f44"
+    },
+    {
+      "file": "assets/qr-code-secret.png",
+      "status": 200,
+      "contentType": "image/png",
+      "matchesCommit": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+      "sha256": "fa698046848693eadc132ce01112de2661a7605686edec299770a13e3e83e9fb"
+    }
+  ]
+}

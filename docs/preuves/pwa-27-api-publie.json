@@ -1,0 +1,1215 @@
+{
+  "testedAt": "2026-11-27T15:47:18.346Z",
+  "baseUrl": "https://amelieheg.github.io/code_secret_1/",
+  "sourceRevision": "03dc97a70a7e17fc254b80add903145fb0cb9ba0",
+  "sourceSha256": {
+    "game.js": "b77fe7ec05c79a6fda2ded8f90c441b59f4e58706db9deee7019c5b85a5fafd7",
+    "api.js": "bd88dd8353c566f7ab84501aa29ac0fc07fcc0b52ee2bbd89975ecc74cfd0e75",
+    "app.js": "ab663d0679d8efa1c8f0d7380afdd13446871f2bb0ca198386a4b4b8a3948983",
+    "index.html": "145db5641284235a32ee8a87f98211b341226d3ae5cb45d7cd026a52325d0f81"
+  },
+  "browser": "158.0.4370.45",
+  "node": "v24.22.3",
+  "results": [
+    {
+      "name": "Sans test=1, API absente et partie jouable",
+      "expected": "Pas de codeSecretTest ; trois rouges refusés sans essai, puis quatre rouges acceptés.",
+      "observed": {
+        "api": "undefined",
+        "propositions": 1
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Paramètre test=1 conservant les autres paramètres",
+      "expected": "État initial not-started, palette et validation désactivées.",
+      "observed": {
+        "state": {
+          "status": "not-started",
+          "attempts": 0,
+          "history": [],
+          "lastGuess": null,
+          "lastResult": null,
+          "lastError": null
+        },
+        "counter": "AUCUN ESSAI",
+        "message": "Mode test : démarrez une partie pour commencer.",
+        "submitDisabled": true,
+        "paletteDisabled": true,
+        "secretText": [
+          "?",
+          "?",
+          "?",
+          "?"
+        ],
+        "history": []
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Refus avant démarrage",
+      "expected": "game-not-started, aucun essai ni historique.",
+      "observed": {
+        "state": {
+          "status": "not-started",
+          "attempts": 0,
+          "history": [],
+          "lastGuess": null,
+          "lastResult": null,
+          "lastError": {
+            "code": "game-not-started",
+            "message": "Aucune partie n’est démarrée. Lancez une nouvelle partie."
+          }
+        },
+        "counter": "AUCUN ESSAI",
+        "message": "Aucune partie n’est démarrée. Lancez une nouvelle partie.",
+        "submitDisabled": true,
+        "paletteDisabled": true,
+        "secretText": [
+          "?",
+          "?",
+          "?",
+          "?"
+        ],
+        "history": []
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Démarrage API sur la partie visible",
+      "expected": "playing, zéro essai, ancien refus effacé et secret caché.",
+      "observed": {
+        "state": {
+          "status": "playing",
+          "attempts": 0,
+          "history": [],
+          "lastGuess": null,
+          "lastResult": null,
+          "lastError": null
+        },
+        "counter": "ESSAI 01 / 10",
+        "enabled": true
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Proposition API affichée immédiatement après await",
+      "expected": "R B R V affiché, 2 bien placées, 2 mal placées, un essai.",
+      "observed": {
+        "state": {
+          "status": "playing",
+          "attempts": 1,
+          "history": [
+            {
+              "guess": [
+                "rouge",
+                "bleu",
+                "rouge",
+                "vert"
+              ],
+              "result": {
+                "wellPlaced": 2,
+                "misplaced": 2
+              }
+            }
+          ],
+          "lastGuess": [
+            "rouge",
+            "bleu",
+            "rouge",
+            "vert"
+          ],
+          "lastResult": {
+            "wellPlaced": 2,
+            "misplaced": 2
+          },
+          "lastError": null
+        },
+        "counter": "ESSAI 02 / 10",
+        "message": "2 bien placées, 2 mal placées. À vous d’affiner !",
+        "submitDisabled": false,
+        "paletteDisabled": false,
+        "secretText": [
+          "?",
+          "?",
+          "?",
+          "?"
+        ],
+        "history": [
+          {
+            "guess": [
+              "rouge",
+              "bleu",
+              "rouge",
+              "vert"
+            ],
+            "result": {
+              "wellPlaced": 2,
+              "misplaced": 2
+            }
+          }
+        ]
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Proposition par clics visible dans getState",
+      "expected": "Quatre rouges ajoutés au même historique : 2 / 0, deuxième essai.",
+      "observed": {
+        "state": {
+          "status": "playing",
+          "attempts": 2,
+          "history": [
+            {
+              "guess": [
+                "rouge",
+                "bleu",
+                "rouge",
+                "vert"
+              ],
+              "result": {
+                "wellPlaced": 2,
+                "misplaced": 2
+              }
+            },
+            {
+              "guess": [
+                "rouge",
+                "rouge",
+                "rouge",
+                "rouge"
+              ],
+              "result": {
+                "wellPlaced": 2,
+                "misplaced": 0
+              }
+            }
+          ],
+          "lastGuess": [
+            "rouge",
+            "rouge",
+            "rouge",
+            "rouge"
+          ],
+          "lastResult": {
+            "wellPlaced": 2,
+            "misplaced": 0
+          },
+          "lastError": null
+        },
+        "counter": "ESSAI 03 / 10",
+        "message": "2 bien placées, 0 mal placée. À vous d’affiner !",
+        "submitDisabled": false,
+        "paletteDisabled": false,
+        "secretText": [
+          "?",
+          "?",
+          "?",
+          "?"
+        ],
+        "history": [
+          {
+            "guess": [
+              "rouge",
+              "bleu",
+              "rouge",
+              "vert"
+            ],
+            "result": {
+              "wellPlaced": 2,
+              "misplaced": 2
+            }
+          },
+          {
+            "guess": [
+              "rouge",
+              "rouge",
+              "rouge",
+              "rouge"
+            ],
+            "result": {
+              "wellPlaced": 2,
+              "misplaced": 0
+            }
+          }
+        ]
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Refus API pendant playing expliqué à l’écran",
+      "expected": "invalid-length ; données conservées et message visible.",
+      "observed": {
+        "state": {
+          "status": "playing",
+          "attempts": 2,
+          "history": [
+            {
+              "guess": [
+                "rouge",
+                "bleu",
+                "rouge",
+                "vert"
+              ],
+              "result": {
+                "wellPlaced": 2,
+                "misplaced": 2
+              }
+            },
+            {
+              "guess": [
+                "rouge",
+                "rouge",
+                "rouge",
+                "rouge"
+              ],
+              "result": {
+                "wellPlaced": 2,
+                "misplaced": 0
+              }
+            }
+          ],
+          "lastGuess": [
+            "rouge",
+            "rouge",
+            "rouge",
+            "rouge"
+          ],
+          "lastResult": {
+            "wellPlaced": 2,
+            "misplaced": 0
+          },
+          "lastError": {
+            "code": "invalid-length",
+            "message": "Votre proposition doit contenir exactement quatre couleurs."
+          }
+        },
+        "counter": "ESSAI 03 / 10",
+        "message": "Votre proposition doit contenir exactement quatre couleurs.",
+        "submitDisabled": false,
+        "paletteDisabled": false,
+        "secretText": [
+          "?",
+          "?",
+          "?",
+          "?"
+        ],
+        "history": [
+          {
+            "guess": [
+              "rouge",
+              "bleu",
+              "rouge",
+              "vert"
+            ],
+            "result": {
+              "wellPlaced": 2,
+              "misplaced": 2
+            }
+          },
+          {
+            "guess": [
+              "rouge",
+              "rouge",
+              "rouge",
+              "rouge"
+            ],
+            "result": {
+              "wellPlaced": 2,
+              "misplaced": 0
+            }
+          }
+        ]
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Démarrage invalide intégralement sans effet",
+      "expected": "Error invalid-type ; état, lastError et HTML inchangés.",
+      "observed": {
+        "code": "invalid-type",
+        "message": "Le secret doit être un tableau complet de noms de couleurs.",
+        "isError": true
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Getters sans effets et copies indépendantes dans le navigateur",
+      "expected": "Modifier un retour ne change ni le jeu ni l’écran.",
+      "observed": {
+        "status": "playing",
+        "attempts": 2,
+        "history": [
+          {
+            "guess": [
+              "rouge",
+              "bleu",
+              "rouge",
+              "vert"
+            ],
+            "result": {
+              "wellPlaced": 2,
+              "misplaced": 2
+            }
+          },
+          {
+            "guess": [
+              "rouge",
+              "rouge",
+              "rouge",
+              "rouge"
+            ],
+            "result": {
+              "wellPlaced": 2,
+              "misplaced": 0
+            }
+          }
+        ],
+        "lastGuess": [
+          "rouge",
+          "rouge",
+          "rouge",
+          "rouge"
+        ],
+        "lastResult": {
+          "wellPlaced": 2,
+          "misplaced": 0
+        },
+        "lastError": {
+          "code": "invalid-length",
+          "message": "Votre proposition doit contenir exactement quatre couleurs."
+        }
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Victoire au dixième, avec refus à neuf essais",
+      "expected": "Refus sans essai, puis won à dix ; historique et écran identiques.",
+      "observed": {
+        "state": {
+          "status": "won",
+          "attempts": 10,
+          "history": [
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "rouge",
+                "rouge",
+                "rouge",
+                "rouge"
+              ],
+              "result": {
+                "wellPlaced": 4,
+                "misplaced": 0
+              }
+            }
+          ],
+          "lastGuess": [
+            "rouge",
+            "rouge",
+            "rouge",
+            "rouge"
+          ],
+          "lastResult": {
+            "wellPlaced": 4,
+            "misplaced": 0
+          },
+          "lastError": null
+        },
+        "counter": "10 / 10 ESSAIS",
+        "message": "Bravo ! Vous avez trouvé le code en 10 essais.",
+        "submitDisabled": true,
+        "paletteDisabled": true,
+        "secretText": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "history": [
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "rouge",
+              "rouge",
+              "rouge",
+              "rouge"
+            ],
+            "result": {
+              "wellPlaced": 4,
+              "misplaced": 0
+            }
+          }
+        ]
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Refus après victoire",
+      "expected": "game-finished avant invalid-type ; partie préservée.",
+      "observed": {
+        "status": "won",
+        "attempts": 10,
+        "history": [
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "rouge",
+              "rouge",
+              "rouge",
+              "rouge"
+            ],
+            "result": {
+              "wellPlaced": 4,
+              "misplaced": 0
+            }
+          }
+        ],
+        "lastGuess": [
+          "rouge",
+          "rouge",
+          "rouge",
+          "rouge"
+        ],
+        "lastResult": {
+          "wellPlaced": 4,
+          "misplaced": 0
+        },
+        "lastError": {
+          "code": "game-finished",
+          "message": "La partie est terminée. Lancez une nouvelle partie pour rejouer."
+        }
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Défaite au dixième et refus après défaite",
+      "expected": "lost à dix essais, puis game-finished sans ajout d’historique.",
+      "observed": {
+        "state": {
+          "status": "lost",
+          "attempts": 10,
+          "history": [
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            },
+            {
+              "guess": [
+                "bleu",
+                "bleu",
+                "bleu",
+                "bleu"
+              ],
+              "result": {
+                "wellPlaced": 0,
+                "misplaced": 0
+              }
+            }
+          ],
+          "lastGuess": [
+            "bleu",
+            "bleu",
+            "bleu",
+            "bleu"
+          ],
+          "lastResult": {
+            "wellPlaced": 0,
+            "misplaced": 0
+          },
+          "lastError": {
+            "code": "game-finished",
+            "message": "La partie est terminée. Lancez une nouvelle partie pour rejouer."
+          }
+        },
+        "counter": "10 / 10 ESSAIS",
+        "message": "La partie est terminée. Lancez une nouvelle partie pour rejouer.",
+        "submitDisabled": true,
+        "paletteDisabled": true,
+        "secretText": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "history": [
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "bleu",
+              "bleu",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 0
+            }
+          }
+        ]
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Bouton Nouvelle partie après une fin",
+      "expected": "API et écran repartent sur playing, zéro essai, lastError null.",
+      "observed": {
+        "state": {
+          "status": "playing",
+          "attempts": 0,
+          "history": [],
+          "lastGuess": null,
+          "lastResult": null,
+          "lastError": null
+        },
+        "counter": "ESSAI 01 / 10",
+        "message": "Un nouveau secret vous attend. À vous de jouer !",
+        "submitDisabled": false,
+        "paletteDisabled": false,
+        "secretText": [
+          "?",
+          "?",
+          "?",
+          "?"
+        ],
+        "history": []
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Rechargement en mode test",
+      "expected": "Aucun secret imposé conservé ; retour not-started.",
+      "observed": {
+        "state": {
+          "status": "not-started",
+          "attempts": 0,
+          "history": [],
+          "lastGuess": null,
+          "lastResult": null,
+          "lastError": null
+        },
+        "counter": "AUCUN ESSAI",
+        "message": "Mode test : démarrez une partie pour commencer.",
+        "submitDisabled": true,
+        "paletteDisabled": true,
+        "secretText": [
+          "?",
+          "?",
+          "?",
+          "?"
+        ],
+        "history": []
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "Affichage à 390 pixels et API identique",
+      "expected": "1 / 2 pour T09, historique cohérent et pas de débordement horizontal.",
+      "observed": {
+        "state": {
+          "status": "playing",
+          "attempts": 1,
+          "history": [
+            {
+              "guess": [
+                "rouge",
+                "bleu",
+                "rouge",
+                "rouge"
+              ],
+              "result": {
+                "wellPlaced": 1,
+                "misplaced": 2
+              }
+            }
+          ],
+          "lastGuess": [
+            "rouge",
+            "bleu",
+            "rouge",
+            "rouge"
+          ],
+          "lastResult": {
+            "wellPlaced": 1,
+            "misplaced": 2
+          },
+          "lastError": null
+        },
+        "counter": "ESSAI 02 / 10",
+        "message": "1 bien placée, 2 mal placées. À vous d’affiner !",
+        "submitDisabled": false,
+        "paletteDisabled": false,
+        "secretText": [
+          "?",
+          "?",
+          "?",
+          "?"
+        ],
+        "history": [
+          {
+            "guess": [
+              "rouge",
+              "bleu",
+              "rouge",
+              "rouge"
+            ],
+            "result": {
+              "wellPlaced": 1,
+              "misplaced": 2
+            }
+          }
+        ]
+      },
+      "status": "réussi"
+    },
+    {
+      "name": "test=0 ne laisse aucune API exposée",
+      "expected": "API absente dans un nouveau document sans activation.",
+      "observed": "undefined",
+      "status": "réussi"
+    },
+    {
+      "name": "Erreurs JavaScript de la page",
+      "expected": "Aucune erreur pageerror.",
+      "observed": [],
+      "status": "réussi"
+    }
+  ],
+  "pageErrors": [],
+  "limits": [
+    "Navigateur automatisé isolé ; ne remplace pas un smartphone réel, un lecteur d’écran ou un binôme humain.",
+    "Polices Google bloquées pour garder des essais reproductibles."
+  ]
+}
