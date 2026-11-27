@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-11-27T15:27:45.309Z",
+  "context": "Version publique de référence pour les essais avant publication de la correction mobile. Le cache du téléphone n’est pas inspecté.",
+  "records": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "matchesCommit": "829ba6d142de1a4a03a1fbe78d5a1869772944db",
+      "sha256": "4dabbe07ac6a39a2783318862e64f28940349e42926b272224c7de370239301a"
+    },
+    {
+      "file": "style.css",
+      "status": 200,
+      "matchesCommit": "829ba6d142de1a4a03a1fbe78d5a1869772944db",
+      "sha256": "75d62eb4e1ee1136d7d423c9c8b941d13e517f9b878d430d6dd9ef79d81acb48"
+    },
+    {
+      "file": "game.js",
+      "status": 200,
+      "matchesCommit": "829ba6d142de1a4a03a1fbe78d5a1869772944db",
+      "sha256": "b77fe7ec05c79a6fda2ded8f90c441b59f4e58706db9deee7019c5b85a5fafd7"
+    },
+    {
+      "file": "api.js",
+      "status": 200,
+      "matchesCommit": "829ba6d142de1a4a03a1fbe78d5a1869772944db",
+      "sha256": "bd88dd8353c566f7ab84501aa29ac0fc07fcc0b52ee2bbd89975ecc74cfd0e75"
+    },
+    {
+      "file": "app.js",
+      "status": 200,
+      "matchesCommit": "829ba6d142de1a4a03a1fbe78d5a1869772944db",
+      "sha256": "ab663d0679d8efa1c8f0d7380afdd13446871f2bb0ca198386a4b4b8a3948983"
+    }
+  ]
+}

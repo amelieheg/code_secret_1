@@ -10,7 +10,7 @@ Les dimensions choisies dans l’aperçu sont 390 × 844 puis 360 × 800. Ce son
 
 Navigateur : navigateur intégré de Codex sous Windows, version non relevée. Les dimensions sont appliquées par le réglage viewport de l’aperçu. La barre de défilement verticale occupe 15 pixels de largeur utile.
 
-Version de référence : commit 829ba6d, API du commit 52d856e. Comparaison des fichiers publiés aux sources de cette version conservée dans le rapport associé. Aucun secret n’a été fixé ni lu dans l’aperçu : les nombres ci-dessous sont des observations sur une partie aléatoire.
+Version de référence : commit 829ba6d, API du commit 52d856e. Comparaison des fichiers publiés aux sources : [preuve avant correction](mobile-27-version-publiee.json). Aucun secret n’a été fixé ni lu dans l’aperçu : les nombres ci-dessous sont des observations sur une partie aléatoire.
 
 | Format | Attendu | Observé avant correction |
 | --- | --- | --- |
@@ -29,7 +29,7 @@ Les coups réellement observés dans l’aperçu sont :
 
 Le quatrième coup est joué après le changement de format, dans la même partie. Les indices du premier et du quatrième coup sont donc identiques. Le secret étant inconnu, cet essai vérifie surtout l’affichage et la conservation de l’historique.
 
-## Correction préparée
+## Correction publiée
 
 La colonne du jeu conservait une largeur minimale trop grande et l’en-tête du plateau ne pouvait pas revenir à la ligne. La correction CSS permet à la colonne de tenir dans l’écran, autorise le retour à la ligne du bouton Nouvelle partie et réduit légèrement l’espacement des pions sur les écrans les plus étroits.
 
@@ -41,20 +41,35 @@ La comparaison reproduit le débordement avant correction : 368 px pour une surf
 
 Dans cette comparaison automatisée, le secret est fixé à rouge, rouge, bleu, vert uniquement pour rendre les indices reproductibles. Ce n’est pas la partie aléatoire de l’aperçu ni celle du téléphone. Le programme de reproduction est tests/mobile.browser.cjs, lancé depuis la racine avec Playwright disponible : npm run test:mobile.
 
-La correction est vérifiée localement. Sa publication et le nouveau contrôle dans l’aperçu du site corrigé restent à confirmer.
+La correction est publiée au commit 06d8237. Les [cinq fichiers servis par le site](mobile-27-version-corrigee.json) sont identiques à cette version après normalisation des retours de ligne. Les tests GitHub et le déploiement ont réussi.
+
+## Nouveau contrôle dans l’aperçu après publication
+
+Le site est rechargé après publication, avec une nouvelle partie aléatoire. Même parcours que précédemment : sélectionner les couleurs au moyen des boutons, valider, changer le format après trois coups, puis répéter la première proposition.
+
+| Coup | Proposition | Bien placées | Mal placées |
+| --- | --- | --- | --- |
+| 1 | rouge, bleu, vert, jaune | 0 | 2 |
+| 2 | orange, violet, rouge, bleu | 2 | 0 |
+| 3 | bleu, vert, jaune, orange | 0 | 2 |
+| 4 | rouge, bleu, vert, jaune | 0 | 2 |
+
+À 390 × 844, largeur utile et largeur totale : 375 / 375 px. À 360 × 800 : 345 / 345 px. Les quatre coups restent présents ; le compteur indique ESSAI 05 / 10. Le défilement vertical atteint l’historique (position relevée : environ 1027 px). La capture observée dans l’aperçu montre les quatre propositions et les deux indices de chacune dans le plateau, sans coupure à droite. Le bouton Nouvelle partie revient à la ligne. Le format temporaire de l’aperçu est ensuite réinitialisé.
+
+La répétition du premier coup conserve bien les indices 0 / 2 dans cette même partie. Les indices diffèrent de l’essai avant correction parce qu’une nouvelle partie aléatoire a commencé.
 
 ## Essai sur un smartphone réel
 
 Source de l’observation : retour de l’étudiante dans le chat le 27 novembre. L’assistant n’a pas manipulé le téléphone.
 
-- Appareil déclaré : smartphone Sony sous Android ; modèle précis et version d’Android non communiqués.
+- Appareil déclaré : Sony XQ-AS52 sous Android ; version d’Android non communiquée.
 - Navigateur déclaré : Google Chrome ; version non communiquée.
 - Lien demandé : https://amelieheg.github.io/code_secret_1/
 - Scénario demandé : rouge, bleu, vert, jaune puis validation.
 - Attendu : sélection et validation tactiles possibles, proposition et indices lisibles dans l’historique.
 - Obtenu déclaré : les commandes répondent bien au toucher et les autres éléments demandés fonctionnent. Aucun indice numérique précis n’a été communiqué.
 - Version de référence du site : 829ba6d, contrôlée depuis l’ordinateur. La révision exacte chargée dans le cache du téléphone n’a pas été contrôlée séparément.
-- Ce retour concerne le site avant la correction CSS du petit format. Un essai du téléphone après publication de cette correction reste à faire.
+- Premier retour : site avant correction CSS. Après publication de 06d8237, l’étudiante a rechargé le site et rejoué le même scénario ; elle confirme que la sélection au toucher, la validation, les indices et l’historique restent utilisables et lisibles. La version publiée est vérifiée depuis l’ordinateur ; le cache du téléphone n’est pas inspecté.
 
 Deux parties indépendantes peuvent avoir des indices différents pour la même proposition, car leurs secrets sont aléatoires. Cela ne suffit pas à démontrer un défaut.
 

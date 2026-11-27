@@ -24,8 +24,8 @@ Pour J1, la version jalon-1 a été actualisée le 19 novembre avec le README al
 
 - Disponible : partie complète, choix et modification des quatre couleurs, dix essais, historique, indices avec doublons, victoire, défaite et nouvelle partie.
 - Vérifié : 22 tests historiques, 3 scénarios S5, 31 tests API 0.2 et 17 contrôles du navigateur, réussis localement puis sur le site publié ; résultats et limites dans le [bilan API](docs/preuves/api02-bilan-25-novembre.md).
-- Publication : API 0.2 et jeu accessibles sur GitHub Pages ; les cinq fichiers publiés correspondent au commit API 52d856e.
-- Limites : la partie est perdue au rechargement ; le parcours complet au clavier reste à vérifier. Un premier essai réel sur smartphone Sony/Android avec Chrome est déclaré le 27 novembre ; le contrôle de la correction mobile sur ce téléphone reste à faire.
+- Publication : API 0.2 et jeu accessibles sur GitHub Pages ; les cinq fichiers publiés correspondent à la correction mobile 06d8237, vérifiée le 27 novembre.
+- Limites : la partie est perdue au rechargement ; le parcours complet au clavier reste à vérifier. La correction mobile a été contrôlée dans deux formats de l’aperçu et sur Sony XQ-AS52 sous Android avec Chrome, selon le retour de l’étudiante le 27 novembre.
 - Questions ouvertes : les couleurs sont-elles faciles à identifier sans distinguer leurs teintes ? Le jeu est-il confortable au clavier ?
 
 ## Règles et source
@@ -142,18 +142,19 @@ Test croisé avec un binôme : **non réalisé**, confirmé le 18 novembre. Il n
 
 Scénario écrit avant l’essai : composer rouge, bleu, vert, jaune, valider puis retrouver la proposition et ses deux indices dans l’historique. Les nombres précis ne sont pas fixés à l’avance car le secret est aléatoire.
 
-Version de référence : jeu publié du commit 829ba6d. Dans l’aperçu du navigateur intégré de Codex sous Windows, les formats 390 × 844 et 360 × 800 ont été comparés après plusieurs coups.
+Versions testées : 829ba6d avant correction, puis 06d8237 après publication. Dans l’aperçu du navigateur intégré de Codex sous Windows, les formats 390 × 844 et 360 × 800 ont été comparés après plusieurs coups.
 
 | Essai | Attendu | Obtenu |
 | --- | --- | --- |
 | Aperçu 390 × 844 | Boutons et indices lisibles ; historique consultable par défilement | Trois coups validés et conservés, sans débordement horizontal |
 | Même partie, 360 × 800 | Historique conservé ; même indice pour une proposition répétée ; plateau dans l’écran | Quatrième coup enregistré avec les mêmes indices que le premier (1 bien placée, 2 mal placées). Défaut de largeur observé : 369 px pour 345 px utiles |
-| Correction CSS locale, deux formats | Supprimer le débordement et conserver les interactions et l’historique | Vérifié dans Edge : 345 / 345 px à 360 px et 375 / 375 px à 390 px ; quatre coups et défilement conservés. Publication à confirmer |
-| Smartphone réel Sony sous Android, Google Chrome | Sélection et validation tactiles possibles ; indices et historique lisibles | Retour de l’étudiante le 27 novembre : commandes tactiles et éléments demandés fonctionnels. Modèle exact et versions non précisés ; essai avant la correction CSS |
+| Correction CSS locale, deux formats | Supprimer le débordement et conserver les interactions et l’historique | Vérifié dans Edge : 345 / 345 px à 360 px et 375 / 375 px à 390 px ; quatre coups et défilement conservés. Publication confirmée, puis mêmes largeurs vérifiées dans l’aperçu du site publié |
+| Site corrigé 06d8237 dans l’aperçu | Même scénario, historique conservé et aucun débordement | Quatre coups conservés ; indice répété 0 bien placée / 2 mal placées ; 345 / 345 px à 360 px et 375 / 375 px à 390 px ; défilement et lisibilité vérifiés |
+| Smartphone réel Sony XQ-AS52 sous Android, Google Chrome | Sélection et validation tactiles possibles ; indices et historique lisibles | L’étudiante confirme le 27 novembre, après rechargement du site corrigé et nouvel essai : tout reste utilisable et lisible. Versions d’Android et de Chrome non relevées |
 
 Le test réel sur téléphone est un retour déclaré par l’étudiante. La version de référence du site a été vérifiée depuis l’ordinateur ; le cache du téléphone n’a pas été contrôlé séparément. Les indices peuvent différer entre deux parties si le secret change.
 
-Le [compte rendu détaillé et la correction](docs/preuves/mobile-27-novembre.md) présentent les étapes, les mesures et les preuves avant/après. Le test sur téléphone après publication de la correction reste à faire.
+Le [compte rendu détaillé et la correction](docs/preuves/mobile-27-novembre.md) présentent les étapes, les mesures et les preuves avant/après. Le nouveau test sur téléphone après publication est confirmé par l’étudiante. Le tag jalon-1 reste inchangé.
 
 ## Correction expliquée
 

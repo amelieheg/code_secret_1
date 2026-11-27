@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-11-27T15:33:14.130Z",
+  "context": "Version publique corrigée contrôlée depuis l’ordinateur ; cache du téléphone non inspecté.",
+  "records": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "matchesCommit": "06d823710d9168e4302737733892c7ed3ce5e02f",
+      "sha256": "4dabbe07ac6a39a2783318862e64f28940349e42926b272224c7de370239301a"
+    },
+    {
+      "file": "style.css",
+      "status": 200,
+      "matchesCommit": "06d823710d9168e4302737733892c7ed3ce5e02f",
+      "sha256": "8fe000a6fb2eef81acadcb9e6cfcd8ac73a2fd830d673dc5142b8f7c791da26e"
+    },
+    {
+      "file": "game.js",
+      "status": 200,
+      "matchesCommit": "06d823710d9168e4302737733892c7ed3ce5e02f",
+      "sha256": "b77fe7ec05c79a6fda2ded8f90c441b59f4e58706db9deee7019c5b85a5fafd7"
+    },
+    {
+      "file": "api.js",
+      "status": 200,
+      "matchesCommit": "06d823710d9168e4302737733892c7ed3ce5e02f",
+      "sha256": "bd88dd8353c566f7ab84501aa29ac0fc07fcc0b52ee2bbd89975ecc74cfd0e75"
+    },
+    {
+      "file": "app.js",
+      "status": 200,
+      "matchesCommit": "06d823710d9168e4302737733892c7ed3ce5e02f",
+      "sha256": "ab663d0679d8efa1c8f0d7380afdd13446871f2bb0ca198386a4b4b8a3948983"
+    }
+  ]
+}
