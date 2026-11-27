@@ -1,0 +1,72 @@
+{
+  "testedAt": "2026-11-27T15:26:48.045Z",
+  "node": "v24.22.3",
+  "results": [
+    {
+      "command": "node --check game.js",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node --check app.js",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node --check game.test.js",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node --check tests/atelier5.test.cjs",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node --check api.js",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node --check tests/api02.test.cjs",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node --check tests/api02.browser.cjs",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node --check tests/mobile.browser.cjs",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": "node game.test.js",
+      "exitCode": 0,
+      "stdout": "OK — R1 — Les six identifiants et leur ordre sont exacts\nOK — R1 — Quatre tirages indépendants permettent les répétitions\nOK — R1 — Chacune des six couleurs peut être tirée\nOK — R1 — Le secret reste fixe et caché après une proposition\nOK — R2 — Une nouvelle partie a dix essais et aucun historique\nOK — R2/R5 — L’ordre gauche-droite change les indices\nOK — R3 — Les propositions incomplètes sont refusées sans mutation\nOK — R3 — Les couleurs interdites et les majuscules sont refusées sans mutation\nOK — R4 — Une proposition valide consomme exactement un essai\nOK — R4 — Les propositions et indices restent dans l’historique\nOK — R4 — Modifier une proposition ou une copie de l’état préserve l’historique\nOK — R5 — Priorité aux bien placées avec doublons : 1 / 2\nOK — R5 — Une occurrence rouge ne compte pas quatre fois : 1 / 0\nOK — R5 — Quatre couleurs présentes toutes mal placées : 0 / 4\nOK — R5 — Aucune couleur commune : 0 / 0\nOK — R5 — Vérification exhaustive des 1 679 616 paires de codes\nOK — R6 — La victoire au premier essai révèle le secret\nOK — R6 — La victoire au dixième essai prime sur la défaite\nOK — R6 — Dix propositions sans victoire donnent une défaite\nOK — R7 — Une proposition après victoire ne change plus la partie\nOK — R7 — Une proposition après défaite ne change plus la partie\nOK — R7 — Nouvelle partie remet tout à zéro et tire quatre nouvelles couleurs\n\n22 tests réussis ; 0 échec(s).\n",
+      "stderr": ""
+    },
+    {
+      "command": "node tests/atelier5.test.cjs",
+      "exitCode": 0,
+      "stdout": "{\"scenario\":\"normal\",\"expected\":{\"ok\":true,\"exact\":2,\"misplaced\":0,\"attempts\":1,\"historyLength\":1},\"observed\":{\"ok\":true,\"attempts\":1,\"historyLength\":1,\"exact\":2,\"misplaced\":0},\"status\":\"réussi\"}\n{\"scenario\":\"quatre-rouges\",\"expected\":{\"ok\":true,\"exact\":2,\"misplaced\":0,\"attempts\":1,\"historyLength\":1},\"observed\":{\"ok\":true,\"attempts\":1,\"historyLength\":1,\"exact\":2,\"misplaced\":0},\"status\":\"réussi\"}\n{\"scenario\":\"incomplete\",\"expected\":{\"ok\":false,\"attempts\":0,\"historyLength\":0},\"observed\":{\"ok\":false,\"attempts\":0,\"historyLength\":0,\"explanation\":\"Votre proposition doit contenir exactement quatre couleurs.\"},\"status\":\"réussi\"}\n3 / 3 scénarios S5 réussis. Version 829ba6d142de1a4a03a1fbe78d5a1869772944db. Moteur identique au tag jalon-1 : false.\n",
+      "stderr": ""
+    },
+    {
+      "command": "node --test --test-reporter=tap tests/api02.test.cjs",
+      "exitCode": 0,
+      "stdout": "TAP version 13\n# Subtest: Activation : test=1 seul, aussi avec les autres paramètres\nok 1 - Activation : test=1 seul, aussi avec les autres paramètres\n  ---\n  duration_ms: 5.5855\n  type: 'test'\n  ...\n# Subtest: Configuration exacte, synchrone et indépendante\nok 2 - Configuration exacte, synchrone et indépendante\n  ---\n  duration_ms: 3.1815\n  type: 'test'\n  ...\n# Subtest: Chargement not-started : aucun tirage avant startGame\nok 3 - Chargement not-started : aucun tirage avant startGame\n  ---\n  duration_ms: 1.0202\n  type: 'test'\n  ...\n# Subtest: Avant démarrage, game-not-started prime sur le type invalide\nok 4 - Avant démarrage, game-not-started prime sur le type invalide\n  ---\n  duration_ms: 1.5264\n  type: 'test'\n  ...\n# Subtest: startGame et submitGuess retournent des promesses et attendent les actions\nok 5 - startGame et submitGuess retournent des promesses et attendent les actions\n  ---\n  duration_ms: 2.1482\n  type: 'test'\n  ...\n# Subtest: Démarrages omis, undefined et {} : nouveau tirage de quatre couleurs\nok 6 - Démarrages omis, undefined et {} : nouveau tirage de quatre couleurs\n  ---\n  duration_ms: 1.7932\n  type: 'test'\n  ...\n# Subtest: Les six couleurs et quatre répétitions peuvent être tirées\nok 7 - Les six couleurs et quatre répétitions peuvent être tirées\n  ---\n  duration_ms: 4.7915\n  type: 'test'\n  ...\n# Subtest: options : formes et clés inconnues refusées avant le secret, sans mutation\nok 8 - options : formes et clés inconnues refusées avant le secret, sans mutation\n  ---\n  duration_ms: 3.4066\n  type: 'test'\n  ...\n# Subtest: Secret présent : undefined et null ne signifient pas tirage aléatoire\nok 9 - Secret présent : undefined et null ne signifient pas tirage aléatoire\n  ---\n  duration_ms: 1.0443\n  type: 'test'\n  ...\n# Subtest: Secret invalide : priorité type, longueur, couleur ; état et lastError intacts\nok 10 - Secret invalide : priorité type, longueur, couleur ; état et lastError intacts\n  ---\n  duration_ms: 1.9097\n  type: 'test'\n  ...\n# Subtest: T01 du contrat : indices et état exacts\nok 11 - T01 du contrat : indices et état exacts\n  ---\n  duration_ms: 1.0581\n  type: 'test'\n  ...\n# Subtest: T02 du contrat : indices et état exacts\nok 12 - T02 du contrat : indices et état exacts\n  ---\n  duration_ms: 0.3393\n  type: 'test'\n  ...\n# Subtest: T03 du contrat : indices et état exacts\nok 13 - T03 du contrat : indices et état exacts\n  ---\n  duration_ms: 0.2499\n  type: 'test'\n  ...\n# Subtest: T04 du contrat : indices et état exacts\nok 14 - T04 du contrat : indices et état exacts\n  ---\n  duration_ms: 0.225\n  type: 'test'\n  ...\n# Subtest: T05 du contrat : indices et état exacts\nok 15 - T05 du contrat : indices et état exacts\n  ---\n  duration_ms: 0.2952\n  type: 'test'\n  ...\n# Subtest: T06 du contrat : indices et état exacts\nok 16 - T06 du contrat : indices et état exacts\n  ---\n  duration_ms: 0.3279\n  type: 'test'\n  ...\n# Subtest: T07 du contrat : indices et état exacts\nok 17 - T07 du contrat : indices et état exacts\n  ---\n  duration_ms: 0.3172\n  type: 'test'\n  ...\n# Subtest: T08 du contrat : indices et état exacts\nok 18 - T08 du contrat : indices et état exacts\n  ---\n  duration_ms: 0.3534\n  type: 'test'\n  ...\n# Subtest: T09 du contrat : indices et état exacts\nok 19 - T09 du contrat : indices et état exacts\n  ---\n  duration_ms: 0.3532\n  type: 'test'\n  ...\n# Subtest: Proposition invalide : types et trous avant la longueur, puis les couleurs\nok 20 - Proposition invalide : types et trous avant la longueur, puis les couleurs\n  ---\n  duration_ms: 2.0465\n  type: 'test'\n  ...\n# Subtest: Un refus est remplacé par le dernier refus, puis effacé par une proposition valide\nok 21 - Un refus est remplacé par le dernier refus, puis effacé par une proposition valide\n  ---\n  duration_ms: 0.4297\n  type: 'test'\n  ...\n# Subtest: Une victoire au dixième essai est prioritaire sur la défaite\nok 22 - Une victoire au dixième essai est prioritaire sur la défaite\n  ---\n  duration_ms: 0.5904\n  type: 'test'\n  ...\n# Subtest: Refus à neuf essais, puis victoire au dixième\nok 23 - Refus à neuf essais, puis victoire au dixième\n  ---\n  duration_ms: 0.9079\n  type: 'test'\n  ...\n# Subtest: Dix propositions fausses : lost, puis game-finished avant le type\nok 24 - Dix propositions fausses : lost, puis game-finished avant le type\n  ---\n  duration_ms: 1.0927\n  type: 'test'\n  ...\n# Subtest: Après victoire, seul lastError peut changer\nok 25 - Après victoire, seul lastError peut changer\n  ---\n  duration_ms: 0.7349\n  type: 'test'\n  ...\n# Subtest: Redémarrer depuis playing, won ou lost remet tous les champs à zéro\nok 26 - Redémarrer depuis playing, won ou lost remet tous les champs à zéro\n  ---\n  duration_ms: 1.1785\n  type: 'test'\n  ...\n# Subtest: Les tableaux fournis sont copiés dès leur soumission\nok 27 - Les tableaux fournis sont copiés dès leur soumission\n  ---\n  duration_ms: 0.5291\n  type: 'test'\n  ...\n# Subtest: Toutes les copies retournées sont indépendantes de l’état interne\nok 28 - Toutes les copies retournées sont indépendantes de l’état interne\n  ---\n  duration_ms: 0.4885\n  type: 'test'\n  ...\n# Subtest: Les getters ne changent ni la partie, ni lastError, ni les actions de rendu\nok 29 - Les getters ne changent ni la partie, ni lastError, ni les actions de rendu\n  ---\n  duration_ms: 0.5947\n  type: 'test'\n  ...\n# Subtest: Le moteur de l’interface et l’API lisent et modifient la même partie\nok 30 - Le moteur de l’interface et l’API lisent et modifient la même partie\n  ---\n  duration_ms: 0.434\n  type: 'test'\n  ...\n# Subtest: Options ordinaires d’un autre contexte et sans prototype acceptées\nok 31 - Options ordinaires d’un autre contexte et sans prototype acceptées\n  ---\n  duration_ms: 2.0326\n  type: 'test'\n  ...\n1..31\n# tests 31\n# suites 0\n# pass 31\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 359.8205\n",
+      "stderr": ""
+    }
+  ]
+}

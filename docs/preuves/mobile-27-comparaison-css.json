@@ -1,0 +1,320 @@
+{
+  "testedAt": "2026-11-27T15:23:36.960Z",
+  "sourceRevision": "829ba6d142de1a4a03a1fbe78d5a1869772944db",
+  "method": "Comparaison CSS avant/après, navigateur isolé sur serveur local, secret rouge rouge bleu vert fixé pour rendre les indices reproductibles. Aucun changement du moteur.",
+  "cases": [
+    {
+      "phase": "avant",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "expected": {
+        "historyLength": 4,
+        "counter": "ESSAI 05 / 10",
+        "sameIndicesForRepeatedGuess": true,
+        "noHorizontalOverflow": true
+      },
+      "observed": {
+        "clientWidth": 375,
+        "scrollWidth": 375,
+        "scrollTop": 1071,
+        "pageHeight": 1915,
+        "counter": "ESSAI 05 / 10",
+        "history": [
+          {
+            "guess": [
+              "rouge",
+              "bleu",
+              "vert",
+              "jaune"
+            ],
+            "result": {
+              "wellPlaced": 1,
+              "misplaced": 2
+            }
+          },
+          {
+            "guess": [
+              "orange",
+              "violet",
+              "rouge",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 2
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "vert",
+              "jaune",
+              "orange"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 2
+            }
+          },
+          {
+            "guess": [
+              "rouge",
+              "bleu",
+              "vert",
+              "jaune"
+            ],
+            "result": {
+              "wellPlaced": 1,
+              "misplaced": 2
+            }
+          }
+        ],
+        "displayedRows": 4,
+        "buttonRight": 347.484375,
+        "lastResult": {
+          "wellPlaced": 1,
+          "misplaced": 2
+        }
+      },
+      "noHorizontalOverflow": true,
+      "image": "mobile-27-avant-390.png"
+    },
+    {
+      "phase": "avant",
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "expected": {
+        "historyLength": 4,
+        "counter": "ESSAI 05 / 10",
+        "sameIndicesForRepeatedGuess": true,
+        "noHorizontalOverflow": true
+      },
+      "observed": {
+        "clientWidth": 345,
+        "scrollWidth": 368,
+        "scrollTop": 1130,
+        "pageHeight": 1915,
+        "counter": "ESSAI 05 / 10",
+        "history": [
+          {
+            "guess": [
+              "rouge",
+              "bleu",
+              "vert",
+              "jaune"
+            ],
+            "result": {
+              "wellPlaced": 1,
+              "misplaced": 2
+            }
+          },
+          {
+            "guess": [
+              "orange",
+              "violet",
+              "rouge",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 2
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "vert",
+              "jaune",
+              "orange"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 2
+            }
+          },
+          {
+            "guess": [
+              "rouge",
+              "bleu",
+              "vert",
+              "jaune"
+            ],
+            "result": {
+              "wellPlaced": 1,
+              "misplaced": 2
+            }
+          }
+        ],
+        "displayedRows": 4,
+        "buttonRight": 347.484375,
+        "lastResult": {
+          "wellPlaced": 1,
+          "misplaced": 2
+        }
+      },
+      "noHorizontalOverflow": false,
+      "image": "mobile-27-avant-360.png"
+    },
+    {
+      "phase": "apres",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "expected": {
+        "historyLength": 4,
+        "counter": "ESSAI 05 / 10",
+        "sameIndicesForRepeatedGuess": true,
+        "noHorizontalOverflow": true
+      },
+      "observed": {
+        "clientWidth": 375,
+        "scrollWidth": 375,
+        "scrollTop": 1122,
+        "pageHeight": 1966,
+        "counter": "ESSAI 05 / 10",
+        "history": [
+          {
+            "guess": [
+              "rouge",
+              "bleu",
+              "vert",
+              "jaune"
+            ],
+            "result": {
+              "wellPlaced": 1,
+              "misplaced": 2
+            }
+          },
+          {
+            "guess": [
+              "orange",
+              "violet",
+              "rouge",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 2
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "vert",
+              "jaune",
+              "orange"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 2
+            }
+          },
+          {
+            "guess": [
+              "rouge",
+              "bleu",
+              "vert",
+              "jaune"
+            ],
+            "result": {
+              "wellPlaced": 1,
+              "misplaced": 2
+            }
+          }
+        ],
+        "displayedRows": 4,
+        "buttonRight": 149.484375,
+        "lastResult": {
+          "wellPlaced": 1,
+          "misplaced": 2
+        }
+      },
+      "noHorizontalOverflow": true,
+      "image": "mobile-27-apres-390.png"
+    },
+    {
+      "phase": "apres",
+      "viewport": {
+        "width": 360,
+        "height": 800
+      },
+      "expected": {
+        "historyLength": 4,
+        "counter": "ESSAI 05 / 10",
+        "sameIndicesForRepeatedGuess": true,
+        "noHorizontalOverflow": true
+      },
+      "observed": {
+        "clientWidth": 345,
+        "scrollWidth": 345,
+        "scrollTop": 2,
+        "pageHeight": 2004,
+        "counter": "ESSAI 05 / 10",
+        "history": [
+          {
+            "guess": [
+              "rouge",
+              "bleu",
+              "vert",
+              "jaune"
+            ],
+            "result": {
+              "wellPlaced": 1,
+              "misplaced": 2
+            }
+          },
+          {
+            "guess": [
+              "orange",
+              "violet",
+              "rouge",
+              "bleu"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 2
+            }
+          },
+          {
+            "guess": [
+              "bleu",
+              "vert",
+              "jaune",
+              "orange"
+            ],
+            "result": {
+              "wellPlaced": 0,
+              "misplaced": 2
+            }
+          },
+          {
+            "guess": [
+              "rouge",
+              "bleu",
+              "vert",
+              "jaune"
+            ],
+            "result": {
+              "wellPlaced": 1,
+              "misplaced": 2
+            }
+          }
+        ],
+        "displayedRows": 4,
+        "buttonRight": 149.484375,
+        "lastResult": {
+          "wellPlaced": 1,
+          "misplaced": 2
+        }
+      },
+      "noHorizontalOverflow": true,
+      "image": "mobile-27-apres-360.png"
+    }
+  ],
+  "browser": "Microsoft Edge 158.0.4370.45"
+}
