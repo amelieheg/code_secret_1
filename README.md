@@ -54,7 +54,7 @@ Confirmez le nom et l’icône, puis ouvrez le jeu depuis cette icône et jouez 
 
 Après un premier chargement en ligne réussi, les fichiers du jeu sont disponibles hors connexion. **La partie n’est pas sauvegardée** : rouvrir ou recharger commence une nouvelle partie. L’installation est facultative ; le lien du jeu continue à fonctionner.
 
-Les nouveaux fichiers sont expliqués dans le [bilan PWA et les preuves](docs/preuves/pwa-27-novembre.md). La PWA est publiée au commit 03dc97a. Les 56 tests réussissent ; les neuf contrôles PWA et les 17 contrôles navigateur de l’API réussissent localement puis sur le site publié. L’installation depuis le QR sur un vrai téléphone et l’ouverture depuis l’icône restent à confirmer ; l’essai tactile décrit plus bas ne prouve pas cette installation.
+Les nouveaux fichiers sont expliqués dans le [bilan PWA et les preuves](docs/preuves/pwa-27-novembre.md). La PWA est publiée au commit 03dc97a. Les 56 tests réussissent ; les neuf contrôles PWA et les 17 contrôles navigateur de l’API réussissent localement puis sur le site publié. Le 27 novembre, l’étudiante confirme sur son Sony XQ-AS52, sous Android avec Chrome : QR ouvrant le bon jeu, installation réussie, nom et icône corrects, puis ouverture depuis l’icône et coup joué. Les versions d’Android et de Chrome ne sont pas relevées. L’installation sur ordinateur et le mode hors connexion sur le téléphone restent à vérifier ; le mode hors connexion a été contrôlé dans le navigateur automatisé.
 
 ## Jouer
 

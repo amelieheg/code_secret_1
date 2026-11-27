@@ -31,7 +31,7 @@ Le premier contrôle d’installabilité a signalé « in-incognito » dans le p
 
 Commandes : npm run check, npm test, npm run test:browser et npm run test:pwa. npm étant absent de l’environnement local, les commandes Node.js définies dans package.json ont été exécutées directement. Playwright, Pillow, ReportLab et le lecteur QR sont des outils de développement ; aucune dépendance n’est ajoutée au jeu publié.
 
-Le test mobile précédent vérifie le jeu ; il ne prouve pas l’installation de la PWA. La version PWA est publiée au commit 03dc97a. Les contrôles en ligne ont réussi ; l’installation réelle sur le Sony XQ-AS52 et sur ordinateur n’est pas encore confirmée.
+Le test mobile précédent vérifie le jeu ; il ne prouve pas l’installation de la PWA. La version PWA est publiée au commit 03dc97a. Les contrôles en ligne ont réussi ; l’installation réelle sur le Sony XQ-AS52 est également confirmée par l’étudiante. L’installation sur ordinateur n’est pas réalisée.
 
 ## Contrôles après publication
 
@@ -41,7 +41,7 @@ Le test mobile précédent vérifie le jeu ; il ne prouve pas l’installation d
 - Les neuf contrôles PWA ont été rejoués sur HTTPS : [9/9 réussis](pwa-27-publie.json), dont le rechargement hors connexion et l’API sur la partie visible.
 - Les contrôles existants de l’API sur le site publié : [17/17 réussis](pwa-27-api-publie.json), sans erreur JavaScript.
 - Aperçu intégré de Codex : le guide a été déplié sur le site publié, puis examiné à 360 × 800. QR et lien chargés ; largeur utile et largeur totale égales à 345 px. Les étapes et le QR restent lisibles ; le format temporaire est ensuite réinitialisé.
-- L’installabilité est contrôlée automatiquement dans Edge ; aucune installation sur l’appareil personnel de l’étudiante n’a été réalisée par l’assistant. Le test réel demandé consiste à scanner le QR, installer dans Chrome, ouvrir depuis l’icône puis vérifier le nom, l’icône et un coup.
+- L’installabilité est contrôlée automatiquement dans Edge ; aucune installation sur l’appareil personnel de l’étudiante n’a été réalisée par l’assistant. Le test réel sur Sony est consigné ci-dessous ; le contrôle sur ordinateur reste à faire.
 - Le tag de remise jalon-1 est inchangé : dc50a1d. Cette PWA est un ajout ultérieur.
 
 ## Choix et fichiers
@@ -56,3 +56,13 @@ Le test mobile précédent vérifie le jeu ; il ne prouve pas l’installation d
 Une installation ne sauvegarde pas la partie : recharger ou rouvrir le jeu commence une nouvelle partie, comme avant. Un premier accès en ligne réussi est nécessaire pour le mode hors connexion.
 
 Sources techniques consultées : [installation PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable), [service workers](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers), [installation selon le navigateur](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Installing).
+
+## Installation réelle sur Sony XQ-AS52
+
+- Date : 27 novembre 2026 ; retour de l’étudiante après publication de la PWA. L’assistant n’a pas manipulé le téléphone.
+- Appareil : Sony XQ-AS52 sous Android, Google Chrome ; versions d’Android et de Chrome non relevées.
+- Référence du jeu servi : 03dc97a ; d92b2bf ajoute seulement les preuves, sans changement des fichiers du jeu. Le cache exact du téléphone n’est pas inspecté.
+- Départ et attendu : scanner le QR public, retrouver le bon jeu, installer depuis Chrome, ouvrir depuis la nouvelle icône puis vérifier le nom Code secret, l’icône aux quatre pions colorés et un coup jouable.
+- Obtenu déclaré : le QR ouvre le jeu, l’installation réussit, le nom et l’icône sont corrects, l’ouverture depuis l’icône et le jeu fonctionnent.
+- Ce retour confirme l’essai d’installation sur un vrai smartphone ; aucune capture du téléphone ni valeur numérique des indices n’est fournie.
+- Non vérifié sur matériel réel : ouverture du téléphone hors connexion, installation sur ordinateur, autres appareils ou navigateurs. Les contrôles hors connexion décrits plus haut sont automatisés dans Edge.
