@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-11-27T15:44:53.329807+00:00",
+  "method": "Lecture indépendante avec zxing-cpp 3.2.0.post1",
+  "file": "assets\\qr-code-secret.png",
+  "sha256": "fa698046848693eadc132ce01112de2661a7605686edec299770a13e3e83e9fb",
+  "expected": "https://amelieheg.github.io/code_secret_1/",
+  "observed": "https://amelieheg.github.io/code_secret_1/",
+  "status": "réussi"
+}

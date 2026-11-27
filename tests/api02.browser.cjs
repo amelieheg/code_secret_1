@@ -24,8 +24,8 @@ async function check(name,expected,action){
   catch(error){results.push({name,expected,observed:error.message,status:'échoué'});throw error;}
 }
 async function makeServer(){
-  const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8'};
-  const files=new Set(['index.html','game.js','api.js','app.js','style.css']);
+  const mime={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.png':'image/png','.webmanifest':'application/manifest+json'};
+  const files=new Set(['index.html','game.js','api.js','app.js','style.css','pwa.js','sw.js','manifest.webmanifest','assets/icon-192.png','assets/icon-512.png','assets/icon-maskable-512.png','assets/apple-touch-icon.png','assets/qr-code-secret.png']);
   server=http.createServer((req,res)=>{
     const url=new URL(req.url,'http://localhost');
     if(!url.pathname.startsWith('/code_secret_1/')){res.writeHead(404).end();return;}

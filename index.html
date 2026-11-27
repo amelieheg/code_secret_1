@@ -4,6 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f7f4ed">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" href="assets/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="Code secret">
   <title>Code secret — À vous de décoder.</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -32,10 +36,34 @@
         <div class="little-note"><span aria-hidden="true">✳</span> Prenez votre temps. Le secret ne bougera pas.</div>
       </aside>
     </div>
+    <details class="installation card" id="installation">
+      <summary>Installer Code secret sur mon appareil</summary>
+      <div class="installation-content">
+        <div>
+          <h2>Votre jeu, depuis son icône.</h2>
+          <p>Installez Code secret depuis votre navigateur pour l’ouvrir comme une application. L’installation est facultative et gratuite.</p>
+          <button id="install-app" class="install-button" type="button" hidden>Installer Code secret</button>
+          <p id="install-status" role="status">Utilisez le menu de votre navigateur et suivez les étapes ci-dessous.</p>
+          <ol>
+            <li><strong>Android · Chrome :</strong> ouvrez le menu ⋮ puis « Installer l’application » ou « Ajouter à l’écran d’accueil », selon ce qui est proposé.</li>
+            <li><strong>iPhone · Safari :</strong> ouvrez le menu de partage puis « Sur l’écran d’accueil » ou « Ajouter à l’écran d’accueil ».</li>
+            <li><strong>Ordinateur · Chrome ou Edge :</strong> utilisez l’icône d’installation dans la barre d’adresse ou la commande d’installation du menu.</li>
+          </ol>
+          <p>Confirmez le nom <strong>Code secret</strong> et l’icône aux quatre pions colorés, puis ouvrez le jeu depuis cette icône. Les commandes varient selon le navigateur.</p>
+          <p>Après un premier chargement en ligne réussi, le jeu peut s’ouvrir hors connexion. La partie en cours n’est pas sauvegardée : rouvrir ou recharger démarre une nouvelle partie.</p>
+        </div>
+        <figure>
+          <a href="https://amelieheg.github.io/code_secret_1/" aria-label="Ouvrir Code secret à son adresse publique"><img src="assets/qr-code-secret.png" width="240" height="240" alt="QR code vers le jeu Code secret publié"></a>
+          <figcaption>Scannez avec votre téléphone pour ouvrir le jeu, puis suivez l’aide d’installation.</figcaption>
+          <a class="public-address" href="https://amelieheg.github.io/code_secret_1/">amelieheg.github.io/code_secret_1/</a>
+        </figure>
+      </div>
+    </details>
     <footer class="page-footer"><span>UN ESPRIT CURIEUX FAIT TOUTE LA DIFFÉRENCE.</span><span>6 couleurs · 4 emplacements · 10 essais</span></footer>
   </main>
   <script src="game.js"></script>
   <script src="api.js"></script>
   <script src="app.js"></script>
+  <script src="pwa.js"></script>
 </body>
 </html>

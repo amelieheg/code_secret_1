@@ -24,7 +24,7 @@ Pour J1, la version jalon-1 a été actualisée le 19 novembre avec le README al
 
 - Disponible : partie complète, choix et modification des quatre couleurs, dix essais, historique, indices avec doublons, victoire, défaite et nouvelle partie.
 - Vérifié : 22 tests historiques, 3 scénarios S5, 31 tests API 0.2 et 17 contrôles du navigateur, réussis localement puis sur le site publié ; résultats et limites dans le [bilan API](docs/preuves/api02-bilan-25-novembre.md).
-- Publication : API 0.2 et jeu accessibles sur GitHub Pages ; les cinq fichiers publiés correspondent à la correction mobile 06d8237, vérifiée le 27 novembre.
+- Publication : jeu et API 0.2 sur GitHub Pages. L’installation PWA est ajoutée après la correction mobile 06d8237 ; voir les vérifications et leur version dans le [bilan PWA](docs/preuves/pwa-27-novembre.md).
 - Limites : la partie est perdue au rechargement ; le parcours complet au clavier reste à vérifier. La correction mobile a été contrôlée dans deux formats de l’aperçu et sur Sony XQ-AS52 sous Android avec Chrome, selon le retour de l’étudiante le 27 novembre.
 - Questions ouvertes : les couleurs sont-elles faciles à identifier sans distinguer leurs teintes ? Le jeu est-il confortable au clavier ?
 
@@ -37,6 +37,24 @@ Les [sept règles complètes](docs/sources/regles.md) et le [périmètre du jalo
 ## Commencer
 
 Ouvrez [le jeu publié](https://amelieheg.github.io/code_secret_1/) dans un navigateur récent. Pour jouer localement, ouvrez `index.html`. Aucune installation ni aucun serveur ne sont nécessaires. La page doit afficher le plateau de dix essais, quatre emplacements vides et les six couleurs de la palette. Les polices en ligne sont facultatives : des polices locales prennent le relais sans connexion.
+
+## Installer le jeu et utiliser le QR code
+
+Une **PWA** est un site que le navigateur peut installer comme une application, avec un nom et une icône sur l’appareil. Ici, le nom est **Code secret** et l’icône représente quatre pions colorés.
+
+![QR code vers le jeu publié](assets/qr-code-secret.png)
+
+Scannez ce QR avec votre téléphone : il ouvre [l’adresse normale du jeu](https://amelieheg.github.io/code_secret_1/), sans mode de test. Dans le jeu, dépliez **« Installer Code secret sur mon appareil »**, sous le plateau, pour lire les étapes. Un bouton « Installer Code secret » apparaît si le navigateur le propose.
+
+- **Sony Android avec Chrome :** menu ⋮, puis « Installer l’application » ou « Ajouter à l’écran d’accueil », selon la commande proposée.
+- **Ordinateur avec Chrome ou Edge :** icône d’installation de la barre d’adresse ou commande d’installation du menu.
+- **iPhone avec Safari :** menu de partage, puis ajout à l’écran d’accueil.
+
+Confirmez le nom et l’icône, puis ouvrez le jeu depuis cette icône et jouez un coup. Les commandes d’installation dépendent du navigateur ; le QR ouvre le jeu, il ne l’installe pas automatiquement.
+
+Après un premier chargement en ligne réussi, les fichiers du jeu sont disponibles hors connexion. **La partie n’est pas sauvegardée** : rouvrir ou recharger commence une nouvelle partie. L’installation est facultative ; le lien du jeu continue à fonctionner.
+
+Les nouveaux fichiers sont expliqués dans le [bilan PWA et les preuves](docs/preuves/pwa-27-novembre.md). Les neuf contrôles PWA, les 56 tests et les 17 contrôles navigateur de l’API réussissent localement. L’installation depuis le QR sur un vrai téléphone et l’ouverture depuis l’icône restent à vérifier après publication ; l’essai tactile décrit plus bas ne prouve pas cette installation.
 
 ## Jouer
 
@@ -169,6 +187,10 @@ Le [compte rendu détaillé et la correction](docs/preuves/mobile-27-novembre.md
 - `app.js` : interactions et affichage.
 - `game.test.js` : tests historiques des règles.
 - `tests/api02.test.cjs` et `tests/api02.browser.cjs` : contrat et intégration avec le plateau.
+- `manifest.webmanifest` : nom, icônes et adresse de démarrage de l’application installée.
+- `pwa.js` et `sw.js` : installation et fichiers disponibles hors connexion, indépendamment des règles.
+- `assets/` : icônes et QR code ; `tools/generate-pwa-assets.py` permet de les recréer.
+- `tests/pwa.browser.cjs` : vérification PWA, rechargement hors connexion et compatibilité API.
 - `AGENTS.md` : consignes durables pour travailler avec Codex.
 - `.github/workflows/` : tests et publication Pages vérifiés sur le nouveau dépôt.
 

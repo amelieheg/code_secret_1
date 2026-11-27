@@ -1,0 +1,105 @@
+{
+  "testedAt": "2026-11-27T15:44:31.441Z",
+  "node": "v24.22.3",
+  "method": "npm indisponible ; exécution directe des commandes check et test de package.json avec Node.js.",
+  "results": [
+    {
+      "script": "check",
+      "command": "node --check game.js",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "script": "check",
+      "command": "node --check app.js",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "script": "check",
+      "command": "node --check game.test.js",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "script": "check",
+      "command": "node --check tests/atelier5.test.cjs",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "script": "check",
+      "command": "node --check api.js",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "script": "check",
+      "command": "node --check tests/api02.test.cjs",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "script": "check",
+      "command": "node --check tests/api02.browser.cjs",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "script": "check",
+      "command": "node --check tests/mobile.browser.cjs",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "script": "check",
+      "command": "node --check pwa.js",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "script": "check",
+      "command": "node --check sw.js",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "script": "check",
+      "command": "node --check tests/pwa.browser.cjs",
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "script": "test",
+      "command": "node game.test.js",
+      "exitCode": 0,
+      "stdout": "OK — R1 — Les six identifiants et leur ordre sont exacts\nOK — R1 — Quatre tirages indépendants permettent les répétitions\nOK — R1 — Chacune des six couleurs peut être tirée\nOK — R1 — Le secret reste fixe et caché après une proposition\nOK — R2 — Une nouvelle partie a dix essais et aucun historique\nOK — R2/R5 — L’ordre gauche-droite change les indices\nOK — R3 — Les propositions incomplètes sont refusées sans mutation\nOK — R3 — Les couleurs interdites et les majuscules sont refusées sans mutation\nOK — R4 — Une proposition valide consomme exactement un essai\nOK — R4 — Les propositions et indices restent dans l’historique\nOK — R4 — Modifier une proposition ou une copie de l’état préserve l’historique\nOK — R5 — Priorité aux bien placées avec doublons : 1 / 2\nOK — R5 — Une occurrence rouge ne compte pas quatre fois : 1 / 0\nOK — R5 — Quatre couleurs présentes toutes mal placées : 0 / 4\nOK — R5 — Aucune couleur commune : 0 / 0\nOK — R5 — Vérification exhaustive des 1 679 616 paires de codes\nOK — R6 — La victoire au premier essai révèle le secret\nOK — R6 — La victoire au dixième essai prime sur la défaite\nOK — R6 — Dix propositions sans victoire donnent une défaite\nOK — R7 — Une proposition après victoire ne change plus la partie\nOK — R7 — Une proposition après défaite ne change plus la partie\nOK — R7 — Nouvelle partie remet tout à zéro et tire quatre nouvelles couleurs\n\n22 tests réussis ; 0 échec(s).\n",
+      "stderr": ""
+    },
+    {
+      "script": "test",
+      "command": "node tests/atelier5.test.cjs",
+      "exitCode": 0,
+      "stdout": "{\"scenario\":\"normal\",\"expected\":{\"ok\":true,\"exact\":2,\"misplaced\":0,\"attempts\":1,\"historyLength\":1},\"observed\":{\"ok\":true,\"attempts\":1,\"historyLength\":1,\"exact\":2,\"misplaced\":0},\"status\":\"réussi\"}\n{\"scenario\":\"quatre-rouges\",\"expected\":{\"ok\":true,\"exact\":2,\"misplaced\":0,\"attempts\":1,\"historyLength\":1},\"observed\":{\"ok\":true,\"attempts\":1,\"historyLength\":1,\"exact\":2,\"misplaced\":0},\"status\":\"réussi\"}\n{\"scenario\":\"incomplete\",\"expected\":{\"ok\":false,\"attempts\":0,\"historyLength\":0},\"observed\":{\"ok\":false,\"attempts\":0,\"historyLength\":0,\"explanation\":\"Votre proposition doit contenir exactement quatre couleurs.\"},\"status\":\"réussi\"}\n3 / 3 scénarios S5 réussis. Version 0f017eea0e4262f447748c6b80466a1cf189df4c. Moteur identique au tag jalon-1 : false.\n",
+      "stderr": ""
+    },
+    {
+      "script": "test",
+      "command": "node --test tests/api02.test.cjs",
+      "exitCode": 0,
+      "stdout": "✔ Activation : test=1 seul, aussi avec les autres paramètres (1.0351ms)\n✔ Configuration exacte, synchrone et indépendante (1.2711ms)\n✔ Chargement not-started : aucun tirage avant startGame (0.4741ms)\n✔ Avant démarrage, game-not-started prime sur le type invalide (0.5277ms)\n✔ startGame et submitGuess retournent des promesses et attendent les actions (0.5247ms)\n✔ Démarrages omis, undefined et {} : nouveau tirage de quatre couleurs (0.4506ms)\n✔ Les six couleurs et quatre répétitions peuvent être tirées (0.6008ms)\n✔ options : formes et clés inconnues refusées avant le secret, sans mutation (2.0453ms)\n✔ Secret présent : undefined et null ne signifient pas tirage aléatoire (0.3338ms)\n✔ Secret invalide : priorité type, longueur, couleur ; état et lastError intacts (0.5047ms)\n✔ T01 du contrat : indices et état exacts (0.3382ms)\n✔ T02 du contrat : indices et état exacts (0.132ms)\n✔ T03 du contrat : indices et état exacts (0.0902ms)\n✔ T04 du contrat : indices et état exacts (0.0812ms)\n✔ T05 du contrat : indices et état exacts (0.0722ms)\n✔ T06 du contrat : indices et état exacts (0.0795ms)\n✔ T07 du contrat : indices et état exacts (0.1105ms)\n✔ T08 du contrat : indices et état exacts (0.086ms)\n✔ T09 du contrat : indices et état exacts (0.0886ms)\n✔ Proposition invalide : types et trous avant la longueur, puis les couleurs (0.5875ms)\n✔ Un refus est remplacé par le dernier refus, puis effacé par une proposition valide (0.1352ms)\n✔ Une victoire au dixième essai est prioritaire sur la défaite (0.1884ms)\n✔ Refus à neuf essais, puis victoire au dixième (0.2861ms)\n✔ Dix propositions fausses : lost, puis game-finished avant le type (0.4088ms)\n✔ Après victoire, seul lastError peut changer (0.1644ms)\n✔ Redémarrer depuis playing, won ou lost remet tous les champs à zéro (0.3914ms)\n✔ Les tableaux fournis sont copiés dès leur soumission (0.2848ms)\n✔ Toutes les copies retournées sont indépendantes de l’état interne (0.1777ms)\n✔ Les getters ne changent ni la partie, ni lastError, ni les actions de rendu (0.189ms)\n✔ Le moteur de l’interface et l’API lisent et modifient la même partie (0.1603ms)\n✔ Options ordinaires d’un autre contexte et sans prototype acceptées (0.7461ms)\nℹ tests 31\nℹ suites 0\nℹ pass 31\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 120.9317\n",
+      "stderr": ""
+    }
+  ]
+}

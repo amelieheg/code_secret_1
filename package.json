@@ -6,11 +6,12 @@
   "scripts": {
     "test": "node game.test.js && node tests/atelier5.test.cjs && node --test tests/api02.test.cjs",
     "test:rapport": "node game.test.js --rapport",
-    "check": "node --check game.js && node --check app.js && node --check game.test.js && node --check tests/atelier5.test.cjs && node --check api.js && node --check tests/api02.test.cjs && node --check tests/api02.browser.cjs && node --check tests/mobile.browser.cjs",
+    "check": "node --check game.js && node --check app.js && node --check game.test.js && node --check tests/atelier5.test.cjs && node --check api.js && node --check tests/api02.test.cjs && node --check tests/api02.browser.cjs && node --check tests/mobile.browser.cjs && node --check pwa.js && node --check sw.js && node --check tests/pwa.browser.cjs",
     "test:atelier5": "node tests/atelier5.test.cjs",
     "test:api": "node --test tests/api02.test.cjs",
     "test:browser": "node tests/api02.browser.cjs",
-    "test:mobile": "node tests/mobile.browser.cjs"
+    "test:mobile": "node tests/mobile.browser.cjs",
+    "test:pwa": "node tests/pwa.browser.cjs"
   },
   "engines": {
     "node": ">=18"
